@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B0E591314DD4849006D7FBD /* SOCQ+NSArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC1450B14DD36AF001F8AB3 /* SOCQ+NSArray.m */; };
 		4BC1450614DD36AF001F8AB3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BC1450514DD36AF001F8AB3 /* Foundation.framework */; };
-		4BC1450C14DD36AF001F8AB3 /* SOCQ.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC1450B14DD36AF001F8AB3 /* SOCQ.m */; };
+		4BC1450C14DD36AF001F8AB3 /* SOCQ+NSArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC1450B14DD36AF001F8AB3 /* SOCQ+NSArray.m */; };
 		4BC1451414DD36AF001F8AB3 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BC1451314DD36AF001F8AB3 /* SenTestingKit.framework */; };
 		4BC1451614DD36AF001F8AB3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BC1451514DD36AF001F8AB3 /* UIKit.framework */; };
 		4BC1451714DD36AF001F8AB3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BC1450514DD36AF001F8AB3 /* Foundation.framework */; };
@@ -31,8 +32,8 @@
 		4BC1450214DD36AF001F8AB3 /* libSOCQ.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSOCQ.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BC1450514DD36AF001F8AB3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4BC1450914DD36AF001F8AB3 /* SOCQ-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SOCQ-Prefix.pch"; sourceTree = "<group>"; };
-		4BC1450A14DD36AF001F8AB3 /* SOCQ.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SOCQ.h; sourceTree = "<group>"; };
-		4BC1450B14DD36AF001F8AB3 /* SOCQ.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SOCQ.m; sourceTree = "<group>"; };
+		4BC1450A14DD36AF001F8AB3 /* SOCQ+NSArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SOCQ+NSArray.h"; sourceTree = "<group>"; };
+		4BC1450B14DD36AF001F8AB3 /* SOCQ+NSArray.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SOCQ+NSArray.m"; sourceTree = "<group>"; };
 		4BC1451214DD36AF001F8AB3 /* SOCQTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SOCQTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BC1451314DD36AF001F8AB3 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		4BC1451514DD36AF001F8AB3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -97,8 +98,8 @@
 		4BC1450714DD36AF001F8AB3 /* SOCQ */ = {
 			isa = PBXGroup;
 			children = (
-				4BC1450A14DD36AF001F8AB3 /* SOCQ.h */,
-				4BC1450B14DD36AF001F8AB3 /* SOCQ.m */,
+				4BC1450A14DD36AF001F8AB3 /* SOCQ+NSArray.h */,
+				4BC1450B14DD36AF001F8AB3 /* SOCQ+NSArray.m */,
 				4BC1450814DD36AF001F8AB3 /* Supporting Files */,
 			);
 			path = SOCQ;
@@ -239,7 +240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BC1450C14DD36AF001F8AB3 /* SOCQ.m in Sources */,
+				4BC1450C14DD36AF001F8AB3 /* SOCQ+NSArray.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BC1452314DD36AF001F8AB3 /* SOCQTestsArrays.m in Sources */,
+				4B0E591314DD4849006D7FBD /* SOCQ+NSArray.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +388,7 @@
 				4BC1452814DD36AF001F8AB3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4BC1452914DD36AF001F8AB3 /* Build configuration list for PBXNativeTarget "SOCQTests" */ = {
 			isa = XCConfigurationList;
@@ -394,6 +397,7 @@
 				4BC1452B14DD36AF001F8AB3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
