@@ -14,7 +14,7 @@
 		4BC1451714DD36AF001F8AB3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BC1450514DD36AF001F8AB3 /* Foundation.framework */; };
 		4BC1451A14DD36AF001F8AB3 /* libSOCQ.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BC1450214DD36AF001F8AB3 /* libSOCQ.a */; };
 		4BC1452014DD36AF001F8AB3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4BC1451E14DD36AF001F8AB3 /* InfoPlist.strings */; };
-		4BC1452314DD36AF001F8AB3 /* SOCQTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC1452214DD36AF001F8AB3 /* SOCQTests.m */; };
+		4BC1452314DD36AF001F8AB3 /* SOCQTestsArrays.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC1452214DD36AF001F8AB3 /* SOCQTestsArrays.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +38,8 @@
 		4BC1451514DD36AF001F8AB3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		4BC1451D14DD36AF001F8AB3 /* SOCQTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SOCQTests-Info.plist"; sourceTree = "<group>"; };
 		4BC1451F14DD36AF001F8AB3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		4BC1452114DD36AF001F8AB3 /* SOCQTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SOCQTests.h; sourceTree = "<group>"; };
-		4BC1452214DD36AF001F8AB3 /* SOCQTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SOCQTests.m; sourceTree = "<group>"; };
+		4BC1452114DD36AF001F8AB3 /* SOCQTestsArrays.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SOCQTestsArrays.h; sourceTree = "<group>"; };
+		4BC1452214DD36AF001F8AB3 /* SOCQTestsArrays.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SOCQTestsArrays.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +115,8 @@
 		4BC1451B14DD36AF001F8AB3 /* SOCQTests */ = {
 			isa = PBXGroup;
 			children = (
-				4BC1452114DD36AF001F8AB3 /* SOCQTests.h */,
-				4BC1452214DD36AF001F8AB3 /* SOCQTests.m */,
+				4BC1452114DD36AF001F8AB3 /* SOCQTestsArrays.h */,
+				4BC1452214DD36AF001F8AB3 /* SOCQTestsArrays.m */,
 				4BC1451C14DD36AF001F8AB3 /* Supporting Files */,
 			);
 			path = SOCQTests;
@@ -247,7 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BC1452314DD36AF001F8AB3 /* SOCQTests.m in Sources */,
+				4BC1452314DD36AF001F8AB3 /* SOCQTestsArrays.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,7 +291,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -307,7 +307,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

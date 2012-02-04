@@ -1,14 +1,14 @@
 //
-//  SOCQTests.m
-//  SOCQTests
+//  SOCQTestsArrays.m
+//  SOCQTestsArrays
 //
 //  Created by Adam Burkepile on 2/4/12.
 //  Copyright (c) 2012 Adam Burkepile. All rights reserved.
 //
 
-#import "SOCQTests.h"
+#import "SOCQTestsArrays.h"
 
-@implementation SOCQTests
+@implementation SOCQTestsArrays
 
 - (void)setUp
 {
@@ -24,8 +24,9 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testArrayAll
 {
+    NSArray* ret = nil;
     STFail(@"Unit tests are not implemented yet in SOCQTests");
 }
 
