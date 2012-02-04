@@ -7,6 +7,7 @@
 //
 
 #import "SOCQTestsArrays.h"
+#import "SOCQ+NSArray.h"
 
 @implementation SOCQTestsArrays
 
@@ -14,7 +15,13 @@
 {
     [super setUp];
     
-    // Set-up code here.
+    testArray = [NSArray arrayWithObjects:@"Red", 
+                 @"Green", 
+                 @"Blue", 
+                 @"Yellow", 
+                 @"Black", 
+                 @"White", 
+                 @"Brown", nil];
 }
 
 - (void)tearDown
@@ -24,10 +31,22 @@
     [super tearDown];
 }
 
+- (void)testArrayAllOver
+{
+    NSArray* ret = [testArray take:10];
+    
+    STAssertEquals([ret count], [testArray count], @"Array counts should equal");
+}
+
 - (void)testArrayAll
 {
-    NSArray* ret = nil;
-    STFail(@"Unit tests are not implemented yet in SOCQTests");
+    NSArray* ret = [testArray take:10];
+    
+    for (int i = 0 ; i < [testArray count] ;i++) {
+        STAssertEqualObjects([ret objectAtIndex:i],
+                             [testArray objectAtIndex:i], @"Object doesn't match");
+    }
 }
+
 
 @end

@@ -8,6 +8,8 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
-@interface SOCQTestsArrays : SenTestCase
+@interface SOCQTestsArrays : SenTestCase {
+    NSArray* testArray;
+}
 
 @end
