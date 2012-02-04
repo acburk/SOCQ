@@ -10,9 +10,31 @@
 
 @implementation NSArray (SOCQ)
 
-- (NSMutableArray*)take:(int)inCount {
+- (NSArray*)take:(NSUInteger)inCount {
+    NSMutableArray* retArray = [NSMutableArray new];
     
-    return nil;
+    NSUInteger count = inCount > [self count] ? [self count] : inCount ;
+    
+    for (int i = 0; i < count; i++) {
+        [retArray addObject:[self objectAtIndex:i]];
+    }
+
+    return [retArray copy];
+}
+
+- (NSArray*)skip:(NSUInteger)inCount {
+    NSUInteger position = inCount > [self count] ? [self count] : inCount ;
+    NSUInteger size = [self count] - position;
+    
+    NSRange range;
+    range.location = position;
+    range.length = size;
+    
+    return [self subarrayWithRange:range];
+}
+
+- (NSArray*)skip:(NSUInteger)inSkip take:(NSUInteger)inTake {
+    return [[self skip:inSkip] take:inTake];
 }
 
 @end

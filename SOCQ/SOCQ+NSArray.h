@@ -10,6 +10,8 @@
 
 @interface NSArray (SOCQ)
 
-- (NSMutableArray*)take:(int)inCount;
+- (NSArray*)take:(NSUInteger)inCount;
+- (NSArray*)skip:(NSUInteger)inCount;
+- (NSArray*)skip:(NSUInteger)inSkip take:(NSUInteger)inTake;
 
 @end
