@@ -31,14 +31,14 @@
     [super tearDown];
 }
 
-- (void)testArrayAllOver
+- (void)testArrayTakeAllOver
 {
     NSArray* ret = [testArray take:10];
     
     STAssertEquals([ret count], [testArray count], @"Array counts should equal");
 }
 
-- (void)testArrayAll
+- (void)testArrayTakeAll
 {
     NSArray* ret = [testArray take:10];
     
@@ -48,5 +48,28 @@
     }
 }
 
+- (void)testArrayTakeNone
+{
+    NSArray* ret = [testArray take:0];
+    
+    STAssertEquals([ret count], (NSUInteger)0, @"Array counts should be 0");
+}
+
+- (void)testArrayTakeSomeCount
+{
+    NSArray* ret = [testArray take:3];
+    
+    STAssertEquals([ret count], (NSUInteger)3, @"Array counts should be 0");
+}
+
+- (void)testArrayTakeSome
+{
+    NSArray* ret = [testArray take:3];
+    
+    for (int i = 0 ; i < [ret count] ;i++) {
+        STAssertEqualObjects([ret objectAtIndex:i],
+                             [testArray objectAtIndex:i], @"Object doesn't match");
+    }
+}
 
 @end
