@@ -1,6 +1,6 @@
 //
-//  SOCQ.m
-//  SOCQ
+//  SOCQ+NSArray.m
+//  SOCQ+NSArray
 //
 //  Created by Adam Burkepile on 2/4/12.
 //  Copyright (c) 2012 Adam Burkepile. All rights reserved.
@@ -18,7 +18,7 @@
     for (int i = 0; i < count; i++) {
         [retArray addObject:[self objectAtIndex:i]];
     }
-
+    
     return [retArray copy];
 }
 
@@ -35,6 +35,17 @@
 
 - (NSArray*)skip:(NSUInteger)inSkip take:(NSUInteger)inTake {
     return [[self skip:inSkip] take:inTake];
+}
+
+- (NSArray*)where:(BOOL(^)(id obj))check {
+    NSMutableArray* retArray = [NSMutableArray new];
+    
+    for (int i = 0; i < [self count]; i++) {
+        if (check([self objectAtIndex:i]))
+            [retArray addObject:[self objectAtIndex:i]];
+    }
+    
+    return [retArray copy];
 }
 
 @end
