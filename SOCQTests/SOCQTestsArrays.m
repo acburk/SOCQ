@@ -74,6 +74,8 @@
     }
 }
 
+#pragma mark - skip Tests
+
 - (void)testArraySkipNoneCount {
     NSUInteger skipAmount = 0;
     NSArray* ret = [testArray skip:skipAmount];
@@ -99,7 +101,6 @@
     STAssertEquals([ret count], (NSUInteger)0, @"Return array count mismatch");
 }
 
-#pragma mark - skip Tests
 
 - (void)testArraySkipNone {
     NSUInteger skipAmount = 0;
@@ -173,6 +174,18 @@
         STAssertEqualObjects([ret objectAtIndex:i],
                              [testArray objectAtIndex:i+skipAmount], @"Object doesn't match");
     }
+}
+
+#pragma mark - where Tests
+
+- (void)testArrayWhereCount {
+    NSArray* ret = [testArray where:^BOOL(id obj) {
+        NSString* color = obj;
+        
+        return [color length] == 5;
+    }];
+    
+    STAssertEquals([ret count], (NSUInteger)4, @"Return array count mismatch");
 }
 
 @end
