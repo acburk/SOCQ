@@ -11,7 +11,6 @@
 		4BC1450614DD36AF001F8AB3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BC1450514DD36AF001F8AB3 /* Foundation.framework */; };
 		4BC1450C14DD36AF001F8AB3 /* SOCQ+NSArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC1450B14DD36AF001F8AB3 /* SOCQ+NSArray.m */; };
 		4BC1451414DD36AF001F8AB3 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BC1451314DD36AF001F8AB3 /* SenTestingKit.framework */; };
-		4BC1451614DD36AF001F8AB3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BC1451514DD36AF001F8AB3 /* UIKit.framework */; };
 		4BC1451714DD36AF001F8AB3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BC1450514DD36AF001F8AB3 /* Foundation.framework */; };
 		4BC1451A14DD36AF001F8AB3 /* libSOCQ.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BC1450214DD36AF001F8AB3 /* libSOCQ.a */; };
 		4BC1452014DD36AF001F8AB3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4BC1451E14DD36AF001F8AB3 /* InfoPlist.strings */; };
@@ -57,7 +56,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BC1451414DD36AF001F8AB3 /* SenTestingKit.framework in Frameworks */,
-				4BC1451614DD36AF001F8AB3 /* UIKit.framework in Frameworks */,
 				4BC1451714DD36AF001F8AB3 /* Foundation.framework in Frameworks */,
 				4BC1451A14DD36AF001F8AB3 /* libSOCQ.a in Frameworks */,
 			);
@@ -280,6 +278,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -303,6 +302,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
