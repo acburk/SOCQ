@@ -1,0 +1,401 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4BC1450614DD36AF001F8AB3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BC1450514DD36AF001F8AB3 /* Foundation.framework */; };
+		4BC1450C14DD36AF001F8AB3 /* SOCQ.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC1450B14DD36AF001F8AB3 /* SOCQ.m */; };
+		4BC1451414DD36AF001F8AB3 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BC1451314DD36AF001F8AB3 /* SenTestingKit.framework */; };
+		4BC1451614DD36AF001F8AB3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BC1451514DD36AF001F8AB3 /* UIKit.framework */; };
+		4BC1451714DD36AF001F8AB3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BC1450514DD36AF001F8AB3 /* Foundation.framework */; };
+		4BC1451A14DD36AF001F8AB3 /* libSOCQ.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BC1450214DD36AF001F8AB3 /* libSOCQ.a */; };
+		4BC1452014DD36AF001F8AB3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4BC1451E14DD36AF001F8AB3 /* InfoPlist.strings */; };
+		4BC1452314DD36AF001F8AB3 /* SOCQTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC1452214DD36AF001F8AB3 /* SOCQTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4BC1451814DD36AF001F8AB3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4BC144F914DD36AF001F8AB3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4BC1450114DD36AF001F8AB3;
+			remoteInfo = SOCQ;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4BC1450214DD36AF001F8AB3 /* libSOCQ.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSOCQ.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BC1450514DD36AF001F8AB3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4BC1450914DD36AF001F8AB3 /* SOCQ-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SOCQ-Prefix.pch"; sourceTree = "<group>"; };
+		4BC1450A14DD36AF001F8AB3 /* SOCQ.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SOCQ.h; sourceTree = "<group>"; };
+		4BC1450B14DD36AF001F8AB3 /* SOCQ.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SOCQ.m; sourceTree = "<group>"; };
+		4BC1451214DD36AF001F8AB3 /* SOCQTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SOCQTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BC1451314DD36AF001F8AB3 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		4BC1451514DD36AF001F8AB3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		4BC1451D14DD36AF001F8AB3 /* SOCQTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SOCQTests-Info.plist"; sourceTree = "<group>"; };
+		4BC1451F14DD36AF001F8AB3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4BC1452114DD36AF001F8AB3 /* SOCQTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SOCQTests.h; sourceTree = "<group>"; };
+		4BC1452214DD36AF001F8AB3 /* SOCQTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SOCQTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4BC144FF14DD36AF001F8AB3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BC1450614DD36AF001F8AB3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BC1450E14DD36AF001F8AB3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BC1451414DD36AF001F8AB3 /* SenTestingKit.framework in Frameworks */,
+				4BC1451614DD36AF001F8AB3 /* UIKit.framework in Frameworks */,
+				4BC1451714DD36AF001F8AB3 /* Foundation.framework in Frameworks */,
+				4BC1451A14DD36AF001F8AB3 /* libSOCQ.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4BC144F714DD36AF001F8AB3 = {
+			isa = PBXGroup;
+			children = (
+				4BC1450714DD36AF001F8AB3 /* SOCQ */,
+				4BC1451B14DD36AF001F8AB3 /* SOCQTests */,
+				4BC1450414DD36AF001F8AB3 /* Frameworks */,
+				4BC1450314DD36AF001F8AB3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4BC1450314DD36AF001F8AB3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4BC1450214DD36AF001F8AB3 /* libSOCQ.a */,
+				4BC1451214DD36AF001F8AB3 /* SOCQTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4BC1450414DD36AF001F8AB3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4BC1450514DD36AF001F8AB3 /* Foundation.framework */,
+				4BC1451314DD36AF001F8AB3 /* SenTestingKit.framework */,
+				4BC1451514DD36AF001F8AB3 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4BC1450714DD36AF001F8AB3 /* SOCQ */ = {
+			isa = PBXGroup;
+			children = (
+				4BC1450A14DD36AF001F8AB3 /* SOCQ.h */,
+				4BC1450B14DD36AF001F8AB3 /* SOCQ.m */,
+				4BC1450814DD36AF001F8AB3 /* Supporting Files */,
+			);
+			path = SOCQ;
+			sourceTree = "<group>";
+		};
+		4BC1450814DD36AF001F8AB3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4BC1450914DD36AF001F8AB3 /* SOCQ-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4BC1451B14DD36AF001F8AB3 /* SOCQTests */ = {
+			isa = PBXGroup;
+			children = (
+				4BC1452114DD36AF001F8AB3 /* SOCQTests.h */,
+				4BC1452214DD36AF001F8AB3 /* SOCQTests.m */,
+				4BC1451C14DD36AF001F8AB3 /* Supporting Files */,
+			);
+			path = SOCQTests;
+			sourceTree = "<group>";
+		};
+		4BC1451C14DD36AF001F8AB3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4BC1451D14DD36AF001F8AB3 /* SOCQTests-Info.plist */,
+				4BC1451E14DD36AF001F8AB3 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		4BC1450014DD36AF001F8AB3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		4BC1450114DD36AF001F8AB3 /* SOCQ */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4BC1452614DD36AF001F8AB3 /* Build configuration list for PBXNativeTarget "SOCQ" */;
+			buildPhases = (
+				4BC144FE14DD36AF001F8AB3 /* Sources */,
+				4BC144FF14DD36AF001F8AB3 /* Frameworks */,
+				4BC1450014DD36AF001F8AB3 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SOCQ;
+			productName = SOCQ;
+			productReference = 4BC1450214DD36AF001F8AB3 /* libSOCQ.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		4BC1451114DD36AF001F8AB3 /* SOCQTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4BC1452914DD36AF001F8AB3 /* Build configuration list for PBXNativeTarget "SOCQTests" */;
+			buildPhases = (
+				4BC1450D14DD36AF001F8AB3 /* Sources */,
+				4BC1450E14DD36AF001F8AB3 /* Frameworks */,
+				4BC1450F14DD36AF001F8AB3 /* Resources */,
+				4BC1451014DD36AF001F8AB3 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4BC1451914DD36AF001F8AB3 /* PBXTargetDependency */,
+			);
+			name = SOCQTests;
+			productName = SOCQTests;
+			productReference = 4BC1451214DD36AF001F8AB3 /* SOCQTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4BC144F914DD36AF001F8AB3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "Adam Burkepile";
+			};
+			buildConfigurationList = 4BC144FC14DD36AF001F8AB3 /* Build configuration list for PBXProject "SOCQ" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4BC144F714DD36AF001F8AB3;
+			productRefGroup = 4BC1450314DD36AF001F8AB3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4BC1450114DD36AF001F8AB3 /* SOCQ */,
+				4BC1451114DD36AF001F8AB3 /* SOCQTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4BC1450F14DD36AF001F8AB3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BC1452014DD36AF001F8AB3 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4BC1451014DD36AF001F8AB3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4BC144FE14DD36AF001F8AB3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BC1450C14DD36AF001F8AB3 /* SOCQ.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BC1450D14DD36AF001F8AB3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BC1452314DD36AF001F8AB3 /* SOCQTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4BC1451914DD36AF001F8AB3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4BC1450114DD36AF001F8AB3 /* SOCQ */;
+			targetProxy = 4BC1451814DD36AF001F8AB3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4BC1451E14DD36AF001F8AB3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4BC1451F14DD36AF001F8AB3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4BC1452414DD36AF001F8AB3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4BC1452514DD36AF001F8AB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4BC1452714DD36AF001F8AB3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/SOCQ.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SOCQ/SOCQ-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		4BC1452814DD36AF001F8AB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/SOCQ.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SOCQ/SOCQ-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		4BC1452A14DD36AF001F8AB3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SOCQ/SOCQ-Prefix.pch";
+				INFOPLIST_FILE = "SOCQTests/SOCQTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		4BC1452B14DD36AF001F8AB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SOCQ/SOCQ-Prefix.pch";
+				INFOPLIST_FILE = "SOCQTests/SOCQTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4BC144FC14DD36AF001F8AB3 /* Build configuration list for PBXProject "SOCQ" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4BC1452414DD36AF001F8AB3 /* Debug */,
+				4BC1452514DD36AF001F8AB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4BC1452614DD36AF001F8AB3 /* Build configuration list for PBXNativeTarget "SOCQ" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4BC1452714DD36AF001F8AB3 /* Debug */,
+				4BC1452814DD36AF001F8AB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4BC1452914DD36AF001F8AB3 /* Build configuration list for PBXNativeTarget "SOCQTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4BC1452A14DD36AF001F8AB3 /* Debug */,
+				4BC1452B14DD36AF001F8AB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4BC144F914DD36AF001F8AB3 /* Project object */;
+}
