@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4B0E591314DD4849006D7FBD /* SOCQ+NSArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC1450B14DD36AF001F8AB3 /* SOCQ+NSArray.m */; };
+		4B7EE32214E3AD80001264BC /* SOCQ+NSDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B7EE32014E3AD80001264BC /* SOCQ+NSDictionary.h */; };
+		4B7EE32314E3AD80001264BC /* SOCQ+NSDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B7EE32114E3AD80001264BC /* SOCQ+NSDictionary.m */; };
+		4B7EE32414E3AD80001264BC /* SOCQ+NSDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B7EE32114E3AD80001264BC /* SOCQ+NSDictionary.m */; };
 		4BC1450614DD36AF001F8AB3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BC1450514DD36AF001F8AB3 /* Foundation.framework */; };
 		4BC1450C14DD36AF001F8AB3 /* SOCQ+NSArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC1450B14DD36AF001F8AB3 /* SOCQ+NSArray.m */; };
 		4BC1451414DD36AF001F8AB3 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BC1451314DD36AF001F8AB3 /* SenTestingKit.framework */; };
@@ -28,6 +31,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4B7EE32014E3AD80001264BC /* SOCQ+NSDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SOCQ+NSDictionary.h"; sourceTree = "<group>"; };
+		4B7EE32114E3AD80001264BC /* SOCQ+NSDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SOCQ+NSDictionary.m"; sourceTree = "<group>"; };
 		4BC1450214DD36AF001F8AB3 /* libSOCQ.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSOCQ.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BC1450514DD36AF001F8AB3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4BC1450914DD36AF001F8AB3 /* SOCQ-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SOCQ-Prefix.pch"; sourceTree = "<group>"; };
@@ -98,6 +103,8 @@
 			children = (
 				4BC1450A14DD36AF001F8AB3 /* SOCQ+NSArray.h */,
 				4BC1450B14DD36AF001F8AB3 /* SOCQ+NSArray.m */,
+				4B7EE32014E3AD80001264BC /* SOCQ+NSDictionary.h */,
+				4B7EE32114E3AD80001264BC /* SOCQ+NSDictionary.m */,
 				4BC1450814DD36AF001F8AB3 /* Supporting Files */,
 			);
 			path = SOCQ;
@@ -137,6 +144,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B7EE32214E3AD80001264BC /* SOCQ+NSDictionary.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BC1450C14DD36AF001F8AB3 /* SOCQ+NSArray.m in Sources */,
+				4B7EE32314E3AD80001264BC /* SOCQ+NSDictionary.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +257,7 @@
 			files = (
 				4BC1452314DD36AF001F8AB3 /* SOCQTestsArrays.m in Sources */,
 				4B0E591314DD4849006D7FBD /* SOCQ+NSArray.m in Sources */,
+				4B7EE32414E3AD80001264BC /* SOCQ+NSDictionary.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
