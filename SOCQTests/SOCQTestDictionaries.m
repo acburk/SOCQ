@@ -39,7 +39,7 @@
                                                             return YES;
                                                         }];
 
-    STAssertEquals([retDictionary count],[testDictionary count], @"Array count should match");
+    STAssertEquals([retDictionary count],[testDictionary count], @"Dictionary count should match");
 }
 - (void)testWhereAll
 {
@@ -53,4 +53,13 @@
                              [retDictionary objectForKey:key], @"Objects do not match");
     }
 }
+- (void)testWhereNoneCount
+{
+    NSDictionary* retDictionary = [testDictionary where:^BOOL(id key, id value) {
+        return NO;
+    }];
+    
+    STAssertEquals([retDictionary count],0u, @"Dictionary count should be 0");
+}
+
 @end

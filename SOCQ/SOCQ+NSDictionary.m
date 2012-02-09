@@ -11,7 +11,15 @@
 @implementation NSDictionary (SOCQ)
 
 - (NSDictionary*)where:(BOOL(^)(id key, id value))check {
-    return nil;
+    NSMutableDictionary* retDictionary = [NSMutableDictionary new];
+    
+    for (id key in [self allKeys]) {
+        if (check(key, [self objectForKey:key])) {
+            [retDictionary setObject:[self objectForKey:key] forKey:key];
+        }
+    }
+    
+    return retDictionary;
 }
 
 @end
