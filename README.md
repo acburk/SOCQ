@@ -3,9 +3,9 @@
 Bring some query love to Objective-C
 
 - NSArray
-	- take:
 	- skip:
-	- take:skip:
+	- take:
+	- skip:take:
 	- where:
 	- any:
 	- all:
