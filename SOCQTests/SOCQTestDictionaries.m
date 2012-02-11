@@ -62,4 +62,37 @@
     STAssertEquals([retDictionary count],0u, @"Dictionary count should be 0");
 }
 
+#pragma mark - any Tests
+- (void)testAnyNone {
+    STAssertFalse([testDictionary any:^BOOL(id key, id value) {
+        return [key length] == 2;
+    }], @"Statement should be false");
+}
+- (void)testAnySome {
+    STAssertTrue([testDictionary any:^BOOL(id key, id value) {
+        return [key length] == 4;
+    }], @"Statement should be true");
+}
+- (void)testAnyAll {
+    STAssertTrue([testDictionary any:^BOOL(id key, id value) {
+        return [key length] >= 1;
+    }], @"Statement should be true");
+}
+
+#pragma mark - any Tests
+- (void)testAllNone {
+    STAssertFalse([testDictionary all:^BOOL(id key, id value) {
+        return [key length] >= 10;
+    }], @"Statement should be false");
+}
+- (void)testAllSome {
+    STAssertFalse([testDictionary all:^BOOL(id key, id value) {
+        return [key length] >= 4;
+    }], @"Statement should be false");
+}
+- (void)testAllAll {
+    STAssertTrue([testDictionary all:^BOOL(id key, id value) {
+        return [key length] >= 1;
+    }], @"Statement should be true");
+}
 @end

@@ -22,4 +22,24 @@
     return retDictionary;
 }
 
+- (BOOL)any:(BOOL(^)(id key, id value))check {
+    for (id key in [self allKeys]) {
+        if (check(key, [self objectForKey:key])) {
+            return YES;
+        }
+    }
+    
+    return NO;
+}
+
+- (BOOL)all:(BOOL(^)(id key, id value))check {
+    for (id key in [self allKeys]) {
+        if (!check(key, [self objectForKey:key])) {
+            return NO;
+        }
+    }
+    
+    return YES;
+}
+
 @end

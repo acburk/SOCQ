@@ -10,5 +10,6 @@
 
 @interface NSDictionary (SOCQ)
 - (NSDictionary*)where:(BOOL(^)(id key, id value))check;
-
+- (BOOL)any:(BOOL(^)(id key, id value))check;
+- (BOOL)all:(BOOL(^)(id key, id value))check;
 @end
