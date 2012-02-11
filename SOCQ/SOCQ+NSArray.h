@@ -15,5 +15,6 @@
 - (NSArray*)skip:(NSUInteger)inSkip take:(NSUInteger)inTake;
 - (NSArray*)where:(BOOL(^)(id obj))check;
 - (BOOL)any:(BOOL(^)(id obj))check;
+- (BOOL)all:(BOOL(^)(id obj))check;
 
 @end

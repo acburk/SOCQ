@@ -199,5 +199,26 @@
         return [obj length] == 4;
     }], @"Statement should be true");
 }
+- (void)testAnyAll {
+    STAssertTrue([testArray any:^BOOL(id obj) {
+        return [obj length] >= 1;
+    }], @"Statement should be true");
+}
 
+#pragma mark - any Tests
+- (void)testAllNone {
+    STAssertFalse([testArray all:^BOOL(id obj) {
+        return [obj length] >= 10;
+    }], @"Statement should be false");
+}
+- (void)testAllSome {
+    STAssertFalse([testArray all:^BOOL(id obj) {
+        return [obj length] >= 4;
+    }], @"Statement should be false");
+}
+- (void)testAllAll {
+    STAssertTrue([testArray all:^BOOL(id obj) {
+        return [obj length] >= 1;
+    }], @"Statement should be true");
+}
 @end
