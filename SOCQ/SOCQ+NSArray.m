@@ -48,4 +48,14 @@
     return [retArray copy];
 }
 
+- (BOOL)any:(BOOL(^)(id obj))check {
+    for (int i = 0; i < [self count]; i++) {
+        if (check([self objectAtIndex:i]))
+            return YES;
+    }
+    
+    return NO;
+}
+
+
 @end

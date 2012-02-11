@@ -188,4 +188,16 @@
     STAssertEquals([ret count], (NSUInteger)4, @"Return array count mismatch");
 }
 
+#pragma mark - any Tests
+- (void)testAnyNone {
+    STAssertFalse([testArray any:^BOOL(id obj) {
+        return [obj length] == 2;
+    }], @"Statement should be false");
+}
+- (void)testAnySome {
+    STAssertTrue([testArray any:^BOOL(id obj) {
+        return [obj length] == 4;
+    }], @"Statement should be true");
+}
+
 @end
