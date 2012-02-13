@@ -10,6 +10,7 @@
 
 @interface SOCQTestsArrays : SenTestCase {
     NSArray* testArray;
+    NSArray* testPersonArray;
 }
 
 @end

@@ -16,5 +16,6 @@
 - (NSArray*)where:(BOOL(^)(id obj))check;
 - (BOOL)any:(BOOL(^)(id obj))check;
 - (BOOL)all:(BOOL(^)(id obj))check;
+- (NSDictionary*)groupBy:(id(^)(id obj))groupBlock;
 
 @end

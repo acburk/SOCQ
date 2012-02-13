@@ -9,6 +9,43 @@
 #import "SOCQTestsArrays.h"
 #import "SOCQ+NSArray.h"
 
+@interface Person : NSObject <NSCopying>
+@property (strong, nonatomic) NSString* firstName;
+@property (strong, nonatomic) NSString* lastName;
+@property (strong, nonatomic) Person* parent;
+
+- (id)initWithFirstName:(NSString*)inFirstName 
+               lastName:(NSString*)inLastName 
+              andParent:(Person*)inParent;
+@end
+@implementation Person
+@synthesize firstName;
+@synthesize lastName;
+@synthesize parent;
+
+- (id)initWithFirstName:(NSString*)inFirstName 
+               lastName:(NSString*)inLastName 
+              andParent:(Person*)inParent {
+    if (self = [super init]) {
+        firstName = inFirstName;
+        lastName = inLastName;
+        parent = inParent;
+    }
+    
+    return self;
+}
+
+-(id)copyWithZone:(NSZone *)zone {
+    return [[Person alloc] initWithFirstName:[self firstName] lastName:[self lastName] andParent:[self parent]];
+}
+
+-(BOOL)isEqual:(id)object {
+    return ([[self firstName] isEqualToString:[object firstName]] &&
+            [[self lastName] isEqualToString:[object lastName]] &&
+            ([self parent] == [object parent] || [[self parent] isEqual:[object parent]]));
+}
+@end
+
 @implementation SOCQTestsArrays
 
 - (void)setUp
@@ -22,6 +59,16 @@
                  @"Black", 
                  @"White", 
                  @"Brown",nil];
+    
+    
+    Person* rick = [[Person alloc] initWithFirstName:@"rick" lastName:@"rick" andParent:nil];
+    Person* adam = [[Person alloc] initWithFirstName:@"adam" lastName:@"adam" andParent:nil];
+    Person* dick = [[Person alloc] initWithFirstName:@"dick" lastName:@"dick" andParent:rick];
+    Person* don = [[Person alloc] initWithFirstName:@"don" lastName:@"don" andParent:adam];
+    Person* shane = [[Person alloc] initWithFirstName:@"shane" lastName:@"shane" andParent:rick];
+    Person* bob = [[Person alloc] initWithFirstName:@"bob" lastName:@"bob" andParent:adam];
+    
+    testPersonArray = [NSArray arrayWithObjects:dick,don,shane,bob, nil];
 }
 
 - (void)tearDown
@@ -221,4 +268,40 @@
         return [obj length] >= 1;
     }], @"Statement should be true");
 }
+
+#pragma mark - groupby tests
+- (void)testGroupByNil {
+    NSDictionary* grouped = [testArray groupBy:^id(id obj) {
+        return [NSNumber numberWithUnsignedInteger:[obj length]];
+    }];
+    
+    STAssertNotNil(grouped, @"shouldnt be nil");
+}
+
+- (void)testGroupByCount {
+    NSDictionary* grouped = [testArray groupBy:^id(id obj) {
+        return [NSNumber numberWithUnsignedInteger:[obj length]];
+    }];
+    
+    STAssertEquals([[grouped allKeys] count], 4u, @"should have 4 keys");
+}
+
+- (void)testGroupByFirstChar {
+    NSDictionary* grouped = [testArray groupBy:^id(id obj) {
+        return [NSString stringWithFormat:@"%c",[(NSString*)obj characterAtIndex:0]];
+    }];
+    
+    STAssertEquals([[grouped allKeys] count], 5u, @"should have 5 keys");
+}
+
+- (void)testGroupByCustonClass {
+    NSDictionary* grouped = [testPersonArray groupBy:^id(id obj) {
+        return [(Person*)obj parent];
+    }];
+    NSLog(@"%@",grouped);
+    STAssertEquals([[grouped allKeys] count], 2u, @"should have 2 keys");
+    STAssertEquals([[grouped objectForKey:[[grouped allKeys] objectAtIndex:0]] count], 2u, @"first key should have 2 keys");
+    STAssertEquals([[grouped objectForKey:[[grouped allKeys] objectAtIndex:1]] count], 2u, @"second key should have 2 keys");
+}
+
 @end
