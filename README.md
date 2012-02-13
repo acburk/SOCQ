@@ -1,6 +1,6 @@
 #SOCQ (Syntax for Objective-C Queries)
 
-Bring some query love to Objective-C
+Bringin' some query love to Objective-C
 
 - NSArray
 	- skip:
@@ -9,6 +9,7 @@ Bring some query love to Objective-C
 	- where:
 	- any:
 	- all:
+	- groupby:
 - NSDictionary
 	- where:
 	- any:
