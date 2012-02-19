@@ -304,4 +304,56 @@
     STAssertEquals([[grouped objectForKey:[[grouped allKeys] objectAtIndex:1]] count], 2u, @"second key should have 2 keys");
 }
 
+#pragma mark - distinct
+
+- (void)testDistinct1 {
+    testArray = [NSArray arrayWithObjects:@"Red", 
+                 @"Green", 
+                 @"Blue", 
+                 @"Yellow", 
+                 @"Black", 
+                 @"White", 
+                 @"Brown",nil];
+    
+    NSArray* checkArray = [testArray distinct];
+    
+    STAssertEquals([checkArray count], [testArray count], @"Array count mismatch");
+}
+
+- (void)testDistinct2 {
+    testArray = [NSArray arrayWithObjects:@"Red", 
+                 @"Green", 
+                 @"Blue", 
+                 @"Blue", 
+                 @"Yellow", 
+                 @"Black", 
+                 @"White", 
+                 @"Black", 
+                 @"White", 
+                 @"Black", 
+                 @"White", 
+                 @"Brown",nil];
+    
+    NSArray* checkArray = [testArray distinct];
+    
+    STAssertEquals([checkArray count], 7u, @"Array count mismatch");
+}
+
+- (void)testDistinct3 {
+    testArray = [NSArray arrayWithObjects:@"Red", 
+                 @"Red",
+                 @"Red",
+                 @"Red",
+                 @"Red",
+                 @"Red",
+                 @"Red",
+                 @"Red",
+                 nil];
+    
+    NSArray* checkArray = [testArray distinct];
+    
+    STAssertEquals([checkArray count], 1u, @"Array count mismatch");
+}
+
+
 @end

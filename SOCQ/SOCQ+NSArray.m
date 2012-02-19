@@ -91,4 +91,11 @@
     
     return [groupDictionary copy];
 }
+
+- (NSArray*)distinct {
+    NSSet* uniqueSet = [NSSet setWithArray:self];
+    NSArray* retArray = [uniqueSet allObjects];
+    
+    return retArray;
+}
 @end
