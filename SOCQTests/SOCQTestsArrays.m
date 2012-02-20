@@ -304,7 +304,7 @@
     STAssertEquals([[grouped objectForKey:[[grouped allKeys] objectAtIndex:1]] count], 2u, @"second key should have 2 keys");
 }
 
-#pragma mark - distinctObjects
+#pragma mark - testDistinctObjectsByAddress
 
 - (void)testDistinctObjectsByAddress1 {
     testArray = [NSArray arrayWithObjects:@"Red", 
@@ -336,7 +336,7 @@
     
     NSArray* checkArray = [testArray distinctObjectsByAddress];
     
-    STAssertEquals([checkArray count], 7u, @"Array count mismatch");
+    STAssertEquals([checkArray count], 7u, @"Array count should be 7");
 }
 
 - (void)testDistinctObjectsByAddress3 {
@@ -352,8 +352,100 @@
     
     NSArray* checkArray = [testArray distinctObjectsByAddress];
     
-    STAssertEquals([checkArray count], 1u, @"Array count mismatch");
+    STAssertEquals([checkArray count], 1u, @"Array count should be 1");
 }
 
+- (void)testDistinctObjectsByAddress4 {
+    Person* adam1 = [[Person alloc] initWithFirstName:@"adam" lastName:@"adam" andParent:nil];
+    
+    testPersonArray = [NSArray arrayWithObjects:adam1,adam1, nil];
+    
+    NSArray* checkArray = [testPersonArray distinctObjectsByAddress];
+    
+    STAssertEquals([checkArray count], 1u, @"Array count should be 1");
+}
+
+- (void)testDistinctObjectsByAddress5 {
+    Person* adam1 = [[Person alloc] initWithFirstName:@"adam" lastName:@"adam" andParent:nil];
+    Person* adam2 = [[Person alloc] initWithFirstName:@"adam" lastName:@"adam" andParent:nil];
+    
+    NSArray* personArray = [NSArray arrayWithObjects:adam1,adam2, nil];
+    
+    NSArray* checkArray = [personArray distinctObjectsByAddress];
+    
+    STAssertEquals([checkArray count], [personArray count], @"Array %@ counts should match %@ %@",checkArray,adam1,adam2);
+}
+
+#pragma mark - distinctObjects
+
+- (void)testDistinct1 {
+    testArray = [NSArray arrayWithObjects:@"Red", 
+                 @"Green", 
+                 @"Blue", 
+                 @"Yellow", 
+                 @"Black", 
+                 @"White", 
+                 @"Brown",nil];
+    
+    NSArray* checkArray = [testArray distinct];
+    
+    STAssertEquals([checkArray count], [testArray count], @"Array count mismatch");
+}
+
+- (void)testDistinct2 {
+    testArray = [NSArray arrayWithObjects:@"Red", 
+                 @"Green", 
+                 @"Blue", 
+                 @"Blue", 
+                 @"Yellow", 
+                 @"Black", 
+                 @"White", 
+                 @"Black", 
+                 @"White", 
+                 @"Black", 
+                 @"White", 
+                 @"Brown",nil];
+    
+    NSArray* checkArray = [testArray distinct];
+    
+    STAssertEquals([checkArray count], 7u, @"Array count should be 7");
+}
+
+- (void)testDistinct3 {
+    testArray = [NSArray arrayWithObjects:@"Red", 
+                 @"Red",
+                 @"Red",
+                 @"Red",
+                 @"Red",
+                 @"Red",
+                 @"Red",
+                 @"Red",
+                 nil];
+    
+    NSArray* checkArray = [testArray distinct];
+    
+    STAssertEquals([checkArray count], 1u, @"Array count should be 1");
+}
+
+- (void)testDistinct4 {
+    Person* adam1 = [[Person alloc] initWithFirstName:@"adam" lastName:@"adam" andParent:nil];
+    
+    testPersonArray = [NSArray arrayWithObjects:adam1,adam1, nil];
+    
+    NSArray* checkArray = [testPersonArray distinct];
+    
+    STAssertEquals([checkArray count], 1u, @"Array count should be 1");
+}
+
+- (void)testDistinct5 {
+    Person* adam1 = [[Person alloc] initWithFirstName:@"adam" lastName:@"adam" andParent:nil];
+    Person* adam2 = [[Person alloc] initWithFirstName:@"adam" lastName:@"adam" andParent:nil];
+    
+    NSArray* personArray = [NSArray arrayWithObjects:adam1,adam2, nil];
+    
+    NSArray* checkArray = [personArray distinct];
+    
+    STAssertEquals([checkArray count], 1u, @"Array %@ counts should match %@ %@",checkArray,adam1,adam2);
+}
 
 @end

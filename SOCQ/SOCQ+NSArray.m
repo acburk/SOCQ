@@ -93,9 +93,38 @@
 }
 
 - (NSArray*)distinctObjectsByAddress {
-    NSSet* uniqueSet = [NSSet setWithArray:self];
-    NSArray* retArray = [uniqueSet allObjects];
+    NSMutableArray* retArray = [NSMutableArray new];
+    BOOL matchFound = NO;
     
-    return retArray;
+    for (int i = 0; i < [self count]; i++) {
+        matchFound = NO;
+        for (id retObj in retArray) {
+            if ([[NSString stringWithFormat:@"%p",retObj] 
+                 isEqualToString:
+                 [NSString stringWithFormat:@"%p",[self objectAtIndex:i]]]) {
+                matchFound = YES;
+                break;
+            }
+        }
+        
+        if (!matchFound) {
+            [retArray addObject:[self objectAtIndex:i]];
+        }
+    }
+    
+    return [retArray copy];
 }
+
+- (NSArray*)distinct {
+    NSMutableArray* retArray = [NSMutableArray new];
+    
+    for (int i = 0; i < [self count]; i++) {
+        if (![retArray containsObject:[self objectAtIndex:i]])
+            [retArray addObject:[self objectAtIndex:i]];
+    }
+    
+    return [retArray copy];
+}
+
+
 @end

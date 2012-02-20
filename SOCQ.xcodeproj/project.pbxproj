@@ -36,6 +36,7 @@
 		4B7EE32114E3AD80001264BC /* SOCQ+NSDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SOCQ+NSDictionary.m"; sourceTree = "<group>"; };
 		4B7EE32914E3AEB6001264BC /* SOCQTestDictionaries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOCQTestDictionaries.h; sourceTree = "<group>"; };
 		4B7EE32A14E3AEB6001264BC /* SOCQTestDictionaries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SOCQTestDictionaries.m; sourceTree = "<group>"; };
+		4BC06F2F14F1E1E800D07B5A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		4BC1450214DD36AF001F8AB3 /* libSOCQ.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSOCQ.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BC1450514DD36AF001F8AB3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4BC1450914DD36AF001F8AB3 /* SOCQ-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SOCQ-Prefix.pch"; sourceTree = "<group>"; };
@@ -79,6 +80,7 @@
 				4BC1451B14DD36AF001F8AB3 /* SOCQTests */,
 				4BC1450414DD36AF001F8AB3 /* Frameworks */,
 				4BC1450314DD36AF001F8AB3 /* Products */,
+				4BC06F2F14F1E1E800D07B5A /* README.md */,
 			);
 			sourceTree = "<group>";
 		};

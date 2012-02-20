@@ -18,4 +18,5 @@
 - (BOOL)all:(BOOL(^)(id obj))check;
 - (NSDictionary*)groupBy:(id(^)(id obj))groupBlock;
 - (NSArray*)distinctObjectsByAddress;
+- (NSArray*)distinct;
 @end

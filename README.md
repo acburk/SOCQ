@@ -10,6 +10,7 @@ Bringin' some query love to Objective-C
 	- any:
 	- all:
 	- groupby:
+	- distinctObjectsByAddress
 	- distinct
 - NSDictionary
 	- where:
