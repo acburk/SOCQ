@@ -92,7 +92,7 @@
     return [groupDictionary copy];
 }
 
-- (NSArray*)distinct {
+- (NSArray*)distinctObjectsByAddress {
     NSSet* uniqueSet = [NSSet setWithArray:self];
     NSArray* retArray = [uniqueSet allObjects];
     
