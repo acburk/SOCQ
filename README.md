@@ -12,6 +12,7 @@ Bringin' some query love to Objective-C
 	- groupby:
 	- distinctObjectsByAddress
 	- distinct
+    - select:
 - NSDictionary
 	- where:
 	- any:
