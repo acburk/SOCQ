@@ -128,9 +128,9 @@
 			children = (
 				4BC1452114DD36AF001F8AB3 /* SOCQTestsArrays.h */,
 				4BC1452214DD36AF001F8AB3 /* SOCQTestsArrays.m */,
-				4BC1451C14DD36AF001F8AB3 /* Supporting Files */,
 				4B7EE32914E3AEB6001264BC /* SOCQTestDictionaries.h */,
 				4B7EE32A14E3AEB6001264BC /* SOCQTestDictionaries.m */,
+				4BC1451C14DD36AF001F8AB3 /* Supporting Files */,
 			);
 			path = SOCQTests;
 			sourceTree = "<group>";

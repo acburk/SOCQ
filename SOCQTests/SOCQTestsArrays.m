@@ -448,4 +448,18 @@
     STAssertEquals([checkArray count], 1u, @"Array %@ counts should match %@ %@",checkArray,adam1,adam2);
 }
 
+#pragma mark - select tests
+
+- (void)testStringToPerson {
+    NSArray* people = [testArray select:^(id obj){
+        return [[Person alloc] initWithFirstName:obj lastName:obj andParent:nil];
+    }];
+    
+    STAssertEquals([people count], [testArray count],@"Both arrays should contain the same amount of objects");
+    
+    for (id newObject in people) {
+        STAssertEqualObjects([newObject class], [Person class], @"The new object should be a Person object");
+    }
+}
+
 @end

@@ -126,5 +126,14 @@
     return [retArray copy];
 }
 
+- (NSArray*)select:(id(^)(id originalObject))transform {
+    NSMutableArray* newObjectArray = [NSMutableArray new];
+    
+    for (id object in self) {
+        [newObjectArray addObject:transform(object)];
+    }
+    
+    return [newObjectArray copy];
+}
 
 @end

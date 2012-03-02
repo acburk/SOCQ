@@ -19,4 +19,5 @@
 - (NSDictionary*)groupBy:(id(^)(id obj))groupBlock;
 - (NSArray*)distinctObjectsByAddress;
 - (NSArray*)distinct;
+- (NSArray*)select:(id(^)(id originalObject))transform;
 @end
