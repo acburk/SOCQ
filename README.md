@@ -2,7 +2,7 @@
 
 Bringin' some query love to Objective-C
 
-NSArray
+__NSArray__
 
 - skip:
 - take:
@@ -16,7 +16,7 @@ NSArray
 - select:
 - selectKeypaths:
 
-NSDictionary
+__NSDictionary__
 
 - where:
 - any:
@@ -121,12 +121,9 @@ _Transforms elements in the array into another strongly type object that is retu
 
 _Selects properties from the elements in the array using the keypath mechanism. Any number of keypaths maybe specified but the list must be `nil` terminated. The return value is an array of dictionaries. The dictionary contain the keypaths that were passed in as the parameters as the keys and the valueForKeyPath: as the values._
 
-	// Example - Change people objects into American Class objects
+	// Example - Get the four properties we need from the person object
 
-	NSArray* americans = [people select:^(id obj){ return [[American alloc] initWithFirstName:[obj firstName]
-													LastName:[obj lastName]
-													age:[obj age]] }];
-
+	NSArray* americans = [people selectKeypaths:@"firstName",@"lastName",@"parent",@"age",nil];
 
 ##NSDictionary
 ####where:
