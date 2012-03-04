@@ -298,7 +298,7 @@
     NSDictionary* grouped = [testPersonArray groupBy:^id(id obj) {
         return [(Person*)obj parent];
     }];
-    NSLog(@"%@",grouped);
+
     STAssertEquals([[grouped allKeys] count], 2u, @"should have 2 keys");
     STAssertEquals([[grouped objectForKey:[[grouped allKeys] objectAtIndex:0]] count], 2u, @"first key should have 2 keys");
     STAssertEquals([[grouped objectForKey:[[grouped allKeys] objectAtIndex:1]] count], 2u, @"second key should have 2 keys");
@@ -459,6 +459,58 @@
     
     for (id newObject in people) {
         STAssertEqualObjects([newObject class], [Person class], @"The new object should be a Person object");
+    }
+}
+
+#pragma mark - selectKeypaths tests
+
+- (void)testSelectKeyPathskey {
+    NSArray* people = [testPersonArray selectKeypaths:@"firstName", nil];
+    
+    STAssertEquals([people count], [testPersonArray count],@"Both arrays should contain the same amount of objects");
+    
+    for (id person in people) {
+        STAssertNotNil([person objectForKey:@"firstName"],@"FirstName should not be nil");
+    }
+}
+- (void)testSelectKeyPathsUndefinedKey {
+    NSArray* people = [testPersonArray selectKeypaths:@"age", nil];
+    
+    STAssertEquals([people count], [testPersonArray count],@"Both arrays should contain the same amount of objects");
+    
+    for (id person in people) {
+        STAssertEqualObjects([person objectForKey:@"age"], [NSNull null],@"Age should be nil");
+    }
+}
+- (void)testSelectKeyPathskeypath {
+    NSArray* people = [testPersonArray selectKeypaths:@"parent.firstName", nil];
+    
+    STAssertEquals([people count], [testPersonArray count],@"Both arrays should contain the same amount of objects");
+
+    for (id person in people) {
+        STAssertNotNil([person objectForKey:@"parent.firstName"],@"parent.firstName should not be nil");
+    }
+}
+- (void)testSelectKeyPathsundefinedkeypath {
+    NSArray* people = [testPersonArray selectKeypaths:@"parent.parent.firstName", nil];
+    
+    STAssertEquals([people count], [testPersonArray count],@"Both arrays should contain the same amount of objects");
+    
+    for (id person in people) {
+        STAssertEqualObjects([person objectForKey:@"parent.parent.firstName"], [NSNull null],@"parent.parent.firstName should be nil");
+    }
+}
+
+- (void)testSelectKeyPathsAll {
+    NSArray* people = [testPersonArray selectKeypaths:@"firstName",@"age",@"parent.firstName",@"parent.parent.firstName", nil];
+    
+    STAssertEquals([people count], [testPersonArray count],@"Both arrays should contain the same amount of objects");
+    
+    for (id person in people) {
+        STAssertNotNil([person objectForKey:@"firstName"],@"FirstName should not be nil");
+        STAssertEqualObjects([person objectForKey:@"age"], [NSNull null],@"Age should be nil");
+        STAssertNotNil([person objectForKey:@"parent.firstName"],@"parent.firstName should not be nil");
+        STAssertEqualObjects([person objectForKey:@"parent.parent.firstName"], [NSNull null],@"parent.parent.firstName should be nil");
     }
 }
 

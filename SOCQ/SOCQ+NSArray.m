@@ -7,6 +7,7 @@
 //
 
 #import "SOCQ+NSArray.h"
+#import <Foundation/NSKeyValueCoding.h>
 
 @implementation NSArray (SOCQ)
 
@@ -136,4 +137,41 @@
     return [newObjectArray copy];
 }
 
+- (NSArray*)selectKeypaths:(NSString*)keypath, ... {
+    NSMutableArray* entries = [NSMutableArray new];
+    NSMutableArray* keypathsToGet = [NSMutableArray new];
+    
+    va_list args;
+    va_start(args, keypath);
+    for (NSString *arg = keypath; arg != nil; arg = va_arg(args, NSString*))
+        [keypathsToGet addObject:arg];
+        
+    va_end(args);
+    
+    for (id object in self) {
+        NSMutableDictionary* keyvalues = [NSMutableDictionary new];
+        
+        for (NSString* key in keypathsToGet){
+            id value = nil;
+            
+//TODO: REMOVE TRY/CATCH BUT STILL KEEP FAULT TOLERANCE FOR UNDEFINED KEYS
+            @try {
+                value = [object valueForKeyPath:key];
+            }
+            @catch (NSException *exception) {
+                if([[exception name] isEqualToString:NSUndefinedKeyException])
+                    NSLog(@"Undefined Key:%@",key);
+                else 
+                    @throw exception;
+            }
+
+            value = value ? value : [NSNull null];
+            [keyvalues setObject:value forKey:key];
+        }
+        
+        [entries addObject:keyvalues];
+    }
+    
+    return [entries copy];
+}
 @end
