@@ -135,15 +135,27 @@ _Selects properties from the elements in the array using the keypath mechanism. 
 	
 _Uses the `check` block on every key-object in the dictionary to determine if they should be returned in the return array_
 
+    // Example - get all the keys and objects where the key is 3 or less characters
+  
+    NSDictionary* entriesWithKeysOf3OrLess = [peopleGroup where:^(id key, id value){ return [key length] <= 3; }];
+
 ####any:
 	- (BOOL)any:(BOOL(^)(id key, id value))check;
 	
 _Checks every key-object in the dictionary to see if any of the elements successfully pass the `check` block. If none pass, return `NO`, else `YES`._
 
+    // Exmaple - finds out if any of the keys are longer than 10 characters
+  
+    BOOL areAnyKeysLongerThan10 = [peopleGroups any:^(id key, id value){ return [key length] > 10 }];
+
 ####all:
 	- (BOOL)all:(BOOL(^)(id key, id value))check;
 
 _Checks every key-object in the dictionary to see if all of the elements successfully pass the `check` block. If all elements pass, return `YES`, else `NO`._
+
+    // Exmaple - find out if all the keys are strings
+  
+    BOOL areKeysStrings = [peopleGroups all:^(id key, id value){ return [key class] == [NSString class] }];
 
 ##NSSet
 ####where:
@@ -151,6 +163,6 @@ _Checks every key-object in the dictionary to see if all of the elements success
 	
 _Uses the `check` block on every element in the set to determine if they should be returned in the return set_
 
-	// Example - find people that are 25 years old
+    // Example - find people that are 25 years old
 	
-	NSSet* 25YearOlds = [people where:^(id obj){ return [obj age] == 25; }];
+    NSSet* 25YearOlds = [people where:^(id obj){ return [obj age] == 25; }];
