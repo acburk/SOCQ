@@ -37,7 +37,7 @@ _Returns an array with the specified number of elements from the beginning of th
 	NSArray* elements = [people take:5];
 	
 ####skip:
-	- (NSArray*)skip:(NSUInteger)inCount
+	- (NSArray*)skip:(NSUInteger)inCount;
 
 _Skips the indicated number of elements in the array and returns an array of the remaining elements._
 
@@ -46,7 +46,7 @@ _Skips the indicated number of elements in the array and returns an array of the
 	NSArray* remaining = [people skip:5];
 
 ####skip:take:
-	- (NSArray*)skip:(NSUInteger)inSkip take:(NSUInteger)inTake
+	- (NSArray*)skip:(NSUInteger)inSkip take:(NSUInteger)inTake;
 	
 _Simple convenience method that combines the skip and take methods. Ideal for pagination._
 	
@@ -56,7 +56,7 @@ _Simple convenience method that combines the skip and take methods. Ideal for pa
 	
 	
 ####where:
-	- (NSArray*)where:(BOOL(^)(id obj))check
+	- (NSArray*)where:(BOOL(^)(id obj))check;
 	
 _Uses the `check` block on every element in the array to determine if they should be returned in the return array_
 
@@ -147,7 +147,7 @@ _Checks every key-object in the dictionary to see if all of the elements success
 
 ##NSSet
 ####where:
-	- (NSSet*)where:(BOOL(^)(id obj))check
+	- (NSSet*)where:(BOOL(^)(id obj))check;
 	
 _Uses the `check` block on every element in the set to determine if they should be returned in the return set_
 
