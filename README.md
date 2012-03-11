@@ -22,6 +22,10 @@ __NSDictionary__
 - any:
 - all:
 
+__NSSet__
+
+- where:
+
 ##NSArray
 ####take:
 	- (NSArray*)take:(NSUInteger)inCount;
@@ -140,3 +144,13 @@ _Checks every key-object in the dictionary to see if any of the elements success
 	- (BOOL)all:(BOOL(^)(id key, id value))check;
 
 _Checks every key-object in the dictionary to see if all of the elements successfully pass the `check` block. If all elements pass, return `YES`, else `NO`._
+
+##NSSet
+####where:
+	- (NSSet*)where:(BOOL(^)(id obj))check
+	
+_Uses the `check` block on every element in the set to determine if they should be returned in the return set_
+
+	// Example - find people that are 25 years old
+	
+	NSSet* 25YearOlds = [people where:^(id obj){ return [obj age] == 25; }];
