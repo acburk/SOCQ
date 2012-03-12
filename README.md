@@ -25,6 +25,8 @@ __NSDictionary__
 __NSSet__
 
 - where:
+- any:
+- all:
 
 ##NSArray
 ####take:
