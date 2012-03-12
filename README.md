@@ -166,3 +166,21 @@ _Uses the `check` block on every element in the set to determine if they should 
     // Example - find people that are 25 years old
 	
     NSSet* 25YearOlds = [people where:^(id obj){ return [obj age] == 25; }];
+
+####any:
+	- (BOOL)any:(BOOL(^)(id obj))check;
+
+_Checks every element in the set to see if any of the elements successfully pass the `check` block. If none pass, return `NO`, else `YES`._
+
+	// Example - check to see if anyone is under 18
+
+	BOOL containsMinors = [people any:^(id obj){ return [obj age] < 18; }];
+
+####all:
+	- (BOOL)all:(BOOL(^)(id obj))check;
+
+_Checks every element in the set to see if all of the elements successfully pass the `check` block. If all elements pass, return `YES`, else `NO`._
+
+	// Example - check to see if everyone is 25 or over
+
+	BOOL everyone25orOver = [people all:^(id obj){ return [obj age] >= 25; }];
