@@ -23,6 +23,7 @@
 		4BC1451A14DD36AF001F8AB3 /* libSOCQ.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BC1450214DD36AF001F8AB3 /* libSOCQ.a */; };
 		4BC1452014DD36AF001F8AB3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4BC1451E14DD36AF001F8AB3 /* InfoPlist.strings */; };
 		4BC1452314DD36AF001F8AB3 /* SOCQTestsArrays.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC1452214DD36AF001F8AB3 /* SOCQTestsArrays.m */; };
+		4BF45413150DB1E300E01D20 /* SOCQTestsSets.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF45412150DB1E300E01D20 /* SOCQTestsSets.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		4BC1451F14DD36AF001F8AB3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4BC1452114DD36AF001F8AB3 /* SOCQTestsArrays.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SOCQTestsArrays.h; sourceTree = "<group>"; };
 		4BC1452214DD36AF001F8AB3 /* SOCQTestsArrays.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SOCQTestsArrays.m; sourceTree = "<group>"; };
+		4BF45411150DB1E300E01D20 /* SOCQTestsSets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOCQTestsSets.h; sourceTree = "<group>"; };
+		4BF45412150DB1E300E01D20 /* SOCQTestsSets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SOCQTestsSets.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +141,8 @@
 				4BC1452214DD36AF001F8AB3 /* SOCQTestsArrays.m */,
 				4B7EE32914E3AEB6001264BC /* SOCQTestDictionaries.h */,
 				4B7EE32A14E3AEB6001264BC /* SOCQTestDictionaries.m */,
+				4BF45411150DB1E300E01D20 /* SOCQTestsSets.h */,
+				4BF45412150DB1E300E01D20 /* SOCQTestsSets.m */,
 				4BC1451C14DD36AF001F8AB3 /* Supporting Files */,
 			);
 			path = SOCQTests;
@@ -278,6 +283,7 @@
 				4B7EE32414E3AD80001264BC /* SOCQ+NSDictionary.m in Sources */,
 				4B7EE32B14E3AEB6001264BC /* SOCQTestDictionaries.m in Sources */,
 				4B558E9C150B3CED00D948A5 /* SOCQ+NSSet.m in Sources */,
+				4BF45413150DB1E300E01D20 /* SOCQTestsSets.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

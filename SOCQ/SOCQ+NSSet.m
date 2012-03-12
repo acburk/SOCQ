@@ -19,4 +19,22 @@
     
     return [retSet copy];
 }
+
+- (BOOL)any:(BOOL(^)(id obj))check {
+    for (id obj in self) {
+        if (check(obj))
+            return YES;
+    }
+    
+    return NO;
+}
+
+- (BOOL)all:(BOOL(^)(id obj))check {
+    for (id obj in self) {
+        if (!check(obj))
+            return NO;
+    }
+    
+    return YES;
+}
 @end
