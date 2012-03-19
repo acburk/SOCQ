@@ -12,15 +12,14 @@
 @implementation NSArray (SOCQ)
 
 - (NSArray*)take:(NSUInteger)inCount {
-    NSMutableArray* retArray = [NSMutableArray new];
+    NSUInteger position = 0 ;
+    NSUInteger size = inCount > [self count] ? [self count] : inCount;
     
-    NSUInteger count = inCount > [self count] ? [self count] : inCount ;
+    NSRange range;
+    range.location = position;
+    range.length = size;
     
-    for (int i = 0; i < count; i++) {
-        [retArray addObject:[self objectAtIndex:i]];
-    }
-    
-    return [retArray copy];
+    return [self subarrayWithRange:range];
 }
 
 - (NSArray*)skip:(NSUInteger)inCount {
