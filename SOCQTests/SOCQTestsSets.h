@@ -10,5 +10,6 @@
 
 @interface SOCQTestsSets : SenTestCase {
     NSSet* testSet;
+    NSSet* testPersonSet;
 }
 @end

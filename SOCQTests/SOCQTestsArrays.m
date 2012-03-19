@@ -9,23 +9,23 @@
 #import "SOCQTestsArrays.h"
 #import "SOCQ+NSArray.h"
 
-@interface Person : NSObject <NSCopying>
+@interface ArrayPerson : NSObject <NSCopying>
 @property (strong, nonatomic) NSString* firstName;
 @property (strong, nonatomic) NSString* lastName;
-@property (strong, nonatomic) Person* parent;
+@property (strong, nonatomic) ArrayPerson* parent;
 
 - (id)initWithFirstName:(NSString*)inFirstName 
                lastName:(NSString*)inLastName 
-              andParent:(Person*)inParent;
+              andParent:(ArrayPerson*)inParent;
 @end
-@implementation Person
+@implementation ArrayPerson
 @synthesize firstName;
 @synthesize lastName;
 @synthesize parent;
 
 - (id)initWithFirstName:(NSString*)inFirstName 
                lastName:(NSString*)inLastName 
-              andParent:(Person*)inParent {
+              andParent:(ArrayPerson*)inParent {
     if (self = [super init]) {
         firstName = inFirstName;
         lastName = inLastName;
@@ -36,7 +36,7 @@
 }
 
 -(id)copyWithZone:(NSZone *)zone {
-    return [[Person alloc] initWithFirstName:[self firstName] lastName:[self lastName] andParent:[self parent]];
+    return [[ArrayPerson alloc] initWithFirstName:[self firstName] lastName:[self lastName] andParent:[self parent]];
 }
 
 -(BOOL)isEqual:(id)object {
@@ -61,12 +61,12 @@
                  @"Brown",nil];
     
     
-    Person* rick = [[Person alloc] initWithFirstName:@"rick" lastName:@"rick" andParent:nil];
-    Person* adam = [[Person alloc] initWithFirstName:@"adam" lastName:@"adam" andParent:nil];
-    Person* dick = [[Person alloc] initWithFirstName:@"dick" lastName:@"dick" andParent:rick];
-    Person* don = [[Person alloc] initWithFirstName:@"don" lastName:@"don" andParent:adam];
-    Person* shane = [[Person alloc] initWithFirstName:@"shane" lastName:@"shane" andParent:rick];
-    Person* bob = [[Person alloc] initWithFirstName:@"bob" lastName:@"bob" andParent:adam];
+    ArrayPerson* rick = [[ArrayPerson alloc] initWithFirstName:@"rick" lastName:@"rick" andParent:nil];
+    ArrayPerson* adam = [[ArrayPerson alloc] initWithFirstName:@"adam" lastName:@"adam" andParent:nil];
+    ArrayPerson* dick = [[ArrayPerson alloc] initWithFirstName:@"dick" lastName:@"dick" andParent:rick];
+    ArrayPerson* don = [[ArrayPerson alloc] initWithFirstName:@"don" lastName:@"don" andParent:adam];
+    ArrayPerson* shane = [[ArrayPerson alloc] initWithFirstName:@"shane" lastName:@"shane" andParent:rick];
+    ArrayPerson* bob = [[ArrayPerson alloc] initWithFirstName:@"bob" lastName:@"bob" andParent:adam];
     
     testPersonArray = [NSArray arrayWithObjects:dick,don,shane,bob, nil];
 }
@@ -296,7 +296,7 @@
 
 - (void)testGroupByCustonClass {
     NSDictionary* grouped = [testPersonArray groupBy:^id(id obj) {
-        return [(Person*)obj parent];
+        return [(ArrayPerson*)obj parent];
     }];
 
     STAssertEquals([[grouped allKeys] count], 2u, @"should have 2 keys");
@@ -356,7 +356,7 @@
 }
 
 - (void)testDistinctObjectsByAddress4 {
-    Person* adam1 = [[Person alloc] initWithFirstName:@"adam" lastName:@"adam" andParent:nil];
+    ArrayPerson* adam1 = [[ArrayPerson alloc] initWithFirstName:@"adam" lastName:@"adam" andParent:nil];
     
     testPersonArray = [NSArray arrayWithObjects:adam1,adam1, nil];
     
@@ -366,8 +366,8 @@
 }
 
 - (void)testDistinctObjectsByAddress5 {
-    Person* adam1 = [[Person alloc] initWithFirstName:@"adam" lastName:@"adam" andParent:nil];
-    Person* adam2 = [[Person alloc] initWithFirstName:@"adam" lastName:@"adam" andParent:nil];
+    ArrayPerson* adam1 = [[ArrayPerson alloc] initWithFirstName:@"adam" lastName:@"adam" andParent:nil];
+    ArrayPerson* adam2 = [[ArrayPerson alloc] initWithFirstName:@"adam" lastName:@"adam" andParent:nil];
     
     NSArray* personArray = [NSArray arrayWithObjects:adam1,adam2, nil];
     
@@ -428,7 +428,7 @@
 }
 
 - (void)testDistinct4 {
-    Person* adam1 = [[Person alloc] initWithFirstName:@"adam" lastName:@"adam" andParent:nil];
+    ArrayPerson* adam1 = [[ArrayPerson alloc] initWithFirstName:@"adam" lastName:@"adam" andParent:nil];
     
     testPersonArray = [NSArray arrayWithObjects:adam1,adam1, nil];
     
@@ -438,8 +438,8 @@
 }
 
 - (void)testDistinct5 {
-    Person* adam1 = [[Person alloc] initWithFirstName:@"adam" lastName:@"adam" andParent:nil];
-    Person* adam2 = [[Person alloc] initWithFirstName:@"adam" lastName:@"adam" andParent:nil];
+    ArrayPerson* adam1 = [[ArrayPerson alloc] initWithFirstName:@"adam" lastName:@"adam" andParent:nil];
+    ArrayPerson* adam2 = [[ArrayPerson alloc] initWithFirstName:@"adam" lastName:@"adam" andParent:nil];
     
     NSArray* personArray = [NSArray arrayWithObjects:adam1,adam2, nil];
     
@@ -452,13 +452,13 @@
 
 - (void)testStringToPerson {
     NSArray* people = [testArray select:^(id obj){
-        return [[Person alloc] initWithFirstName:obj lastName:obj andParent:nil];
+        return [[ArrayPerson alloc] initWithFirstName:obj lastName:obj andParent:nil];
     }];
     
     STAssertEquals([people count], [testArray count],@"Both arrays should contain the same amount of objects");
     
     for (id newObject in people) {
-        STAssertEqualObjects([newObject class], [Person class], @"The new object should be a Person object");
+        STAssertEqualObjects([newObject class], [ArrayPerson class], @"The new object should be a Person object");
     }
 }
 
