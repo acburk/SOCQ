@@ -191,7 +191,7 @@ _Checks every element in the set to see if all of the elements successfully pass
 ####groupby:
 	- (NSDictionary*)groupBy:(id(^)(id obj))groupBlock;
 
-_Uses the object returned from the `groupBlock` block as a key to group the object into a NSDictionary that contains a NSArray with all the objects that returned the same key_
+_Uses the object returned from the `groupBlock` block as a key to group the object into a NSDictionary that contains a NSSet with all the objects that returned the same key_
 
 	// Example - group everyone by their last name
 

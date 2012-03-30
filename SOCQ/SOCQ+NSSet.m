@@ -57,7 +57,7 @@
             [[groupDictionary objectForKey:matchingKey] addObject:element];
         }
         else {
-            [groupDictionary setObject:[NSMutableArray arrayWithObject:element] forKey:groupKey];
+            [groupDictionary setObject:[NSMutableSet setWithObject:element] forKey:groupKey];
         }
     }
     
