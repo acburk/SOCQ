@@ -13,4 +13,5 @@
 - (BOOL)any:(BOOL(^)(id obj))check;
 - (BOOL)all:(BOOL(^)(id obj))check;
 - (NSDictionary*)groupBy:(id(^)(id obj))groupBlock;
+- (NSSet*)select:(id(^)(id originalObject))transform;
 @end

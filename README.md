@@ -196,3 +196,15 @@ _Uses the object returned from the `groupBlock` block as a key to group the obje
 	// Example - group everyone by their last name
 
 	NSDictionary* peopleByFamilyName = [people groupBy:^(id obj){ return [obj lastName]; }];
+    
+####select:
+	- (NSSet*)select:(id(^)(id originalObject))transform;
+	
+_Transforms elements in the set into another strongly type object that is returned from the `transform` block._
+
+	// Example - Change people objects into American Class objects
+
+	NSSet* americans = [people select:^(id obj){ return [[American alloc] initWithFirstName:[obj firstName]
+													LastName:[obj lastName]
+													age:[obj age]] }];
+

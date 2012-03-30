@@ -173,4 +173,18 @@
     STAssertEquals([[grouped objectForKey:[[grouped allKeys] objectAtIndex:1]] count], 2u, @"second key should have 2 keys");
 }
 
+#pragma mark - select tests
+
+- (void)testStringToPerson {
+    NSSet* people = [testSet select:^(id obj){
+        return [[SetPerson alloc] initWithFirstName:obj lastName:obj andParent:nil];
+    }];
+    
+    STAssertEquals([people count], [testSet count],@"Both arrays should contain the same amount of objects");
+    
+    for (id newObject in people) {
+        STAssertEqualObjects([newObject class], [SetPerson class], @"The new object should be a Person object");
+    }
+}
+
 @end

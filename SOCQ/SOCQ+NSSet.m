@@ -63,4 +63,14 @@
     
     return [groupDictionary copy];
 }
+
+- (NSSet*)select:(id(^)(id originalObject))transform {
+    NSMutableSet* newObjectArray = [NSMutableSet new];
+    
+    for (id object in self) {
+        [newObjectArray addObject:transform(object)];
+    }
+    
+    return [newObjectArray copy];
+}
 @end
