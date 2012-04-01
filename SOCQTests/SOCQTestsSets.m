@@ -187,4 +187,57 @@
     }
 }
 
+#pragma mark - selectKeypaths tests
+
+- (void)testSelectKeyPathskey {
+    NSSet* people = [testPersonSet selectKeypaths:@"firstName", nil];
+    
+    STAssertEquals([people count], [testPersonSet count],@"The set should contain 4 objects");
+    
+    for (id person in people) {
+        STAssertNotNil([person objectForKey:@"firstName"],@"FirstName should not be nil");
+    }
+}
+- (void)testSelectKeyPathsUndefinedKey {
+    NSSet* people = [testPersonSet selectKeypaths:@"age", nil];
+    
+    STAssertEquals([people count], 1u,@"The set should only contain 1 object");
+    
+    for (id person in people) {
+        STAssertEqualObjects([person objectForKey:@"age"], [NSNull null],@"Age should be nil");
+    }
+}
+- (void)testSelectKeyPathskeypath {
+    NSSet* people = [testPersonSet selectKeypaths:@"parent.firstName", nil];
+    
+    STAssertEquals([people count], 2u,@"The set should only contain 2 object");
+    
+    for (id person in people) {
+        STAssertNotNil([person objectForKey:@"parent.firstName"],@"parent.firstName should not be nil");
+    }
+}
+- (void)testSelectKeyPathsundefinedkeypath {
+    NSSet* people = [testPersonSet selectKeypaths:@"parent.parent.firstName", nil];
+    
+    STAssertEquals([people count], 1u,@"The set should only contain 1 object");
+    
+    for (id person in people) {
+        STAssertEqualObjects([person objectForKey:@"parent.parent.firstName"], [NSNull null],@"parent.parent.firstName should be nil");
+    }
+}
+
+- (void)testSelectKeyPathsAll {
+    NSSet* people = [testPersonSet selectKeypaths:@"firstName",@"age",@"parent.firstName",@"parent.parent.firstName", nil];
+    
+    STAssertEquals([people count], [testPersonSet count],@"Both arrays should contain the same amount of objects");
+    
+    for (id person in people) {
+        STAssertNotNil([person objectForKey:@"firstName"],@"FirstName should not be nil");
+        STAssertEqualObjects([person objectForKey:@"age"], [NSNull null],@"Age should be nil");
+        STAssertNotNil([person objectForKey:@"parent.firstName"],@"parent.firstName should not be nil");
+        STAssertEqualObjects([person objectForKey:@"parent.parent.firstName"], [NSNull null],@"parent.parent.firstName should be nil");
+    }
+}
+
+
 @end

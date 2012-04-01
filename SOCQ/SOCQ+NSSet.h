@@ -14,4 +14,5 @@
 - (BOOL)all:(BOOL(^)(id obj))check;
 - (NSDictionary*)groupBy:(id(^)(id obj))groupBlock;
 - (NSSet*)select:(id(^)(id originalObject))transform;
+- (NSSet*)selectKeypaths:(NSString*)keypath, ... NS_REQUIRES_NIL_TERMINATION;
 @end

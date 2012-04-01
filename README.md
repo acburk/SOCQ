@@ -28,6 +28,8 @@ __NSSet__
 - any:
 - all:
 - groupby:
+- select:
+- selectKeypaths:
 
 ##NSArray
 ####take:
@@ -207,4 +209,14 @@ _Transforms elements in the set into another strongly type object that is return
 	NSSet* americans = [people select:^(id obj){ return [[American alloc] initWithFirstName:[obj firstName]
 													LastName:[obj lastName]
 													age:[obj age]] }];
+                                                    
+####selectKeypaths:
+	- (NSSet*)selectKeypaths:(NSString*)keypath, ... NS_REQUIRES_NIL_TERMINATION;
+
+_Selects properties from the elements in the set using the keypath mechanism. Any number of keypaths maybe specified but the list must be `nil` terminated. The return value is an set of dictionaries. The dictionary contain the keypaths that were passed in as the parameters as the keys and the valueForKeyPath: as the values._
+
+	// Example - Get the four properties we need from the person object
+
+	NSSet* americans = [people selectKeypaths:@"firstName",@"lastName",@"parent",@"age",nil];
+
 
