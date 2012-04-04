@@ -59,7 +59,7 @@
             else if ([sourceCollection isKindOfClass:[NSMutableSet class]])
                 newObject = [NSMutableSet setWithObject:element];
             
-            [targetCollection setObject:[NSMutableSet setWithObject:element] forKey:groupKey];
+            [targetCollection setObject:newObject forKey:groupKey];
         }
     }
 }
