@@ -54,9 +54,9 @@
         else {
             id newObject = nil;
             
-            if ([sourceCollection isKindOfClass:[NSMutableArray class]])
+            if ([sourceCollection isKindOfClass:[NSArray class]])
                 newObject = [NSMutableArray arrayWithObject:element];
-            else if ([sourceCollection isKindOfClass:[NSMutableSet class]])
+            else if ([sourceCollection isKindOfClass:[NSSet class]])
                 newObject = [NSMutableSet setWithObject:element];
             
             [targetCollection setObject:newObject forKey:groupKey];
