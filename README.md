@@ -132,7 +132,7 @@ _Selects properties from the elements in the array using the keypath mechanism. 
 
 	// Example - Get the four properties we need from the person object
 
-	NSArray* americans = [people selectKeypaths:@"firstName",@"lastName",@"parent",@"age",nil];
+	NSArray* americans = [people selectKeypaths:@"firstName",@"lastName",@"parent.firstName",@"age",nil];
 
 ##NSDictionary
 ####where:
@@ -217,6 +217,6 @@ _Selects properties from the elements in the set using the keypath mechanism. An
 
 	// Example - Get the four properties we need from the person object
 
-	NSSet* americans = [people selectKeypaths:@"firstName",@"lastName",@"parent",@"age",nil];
+	NSSet* americans = [people selectKeypaths:@"firstName",@"lastName",@"parent.firstName",@"age",nil];
 
 
