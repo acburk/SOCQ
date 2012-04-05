@@ -7,6 +7,7 @@
 //
 
 #import "SOCQ+NSArray.h"
+#import "SOCQCore.h"
 #import <Foundation/NSKeyValueCoding.h>
 
 @implementation NSArray (SOCQ)
@@ -40,54 +41,23 @@
 - (NSArray*)where:(BOOL(^)(id obj))check {
     NSMutableArray* retArray = [NSMutableArray new];
     
-    for (int i = 0; i < [self count]; i++) {
-        if (check([self objectAtIndex:i]))
-            [retArray addObject:[self objectAtIndex:i]];
-    }
+    [SOCQCore where:check onCollection:self withReturnCollection:retArray];
     
     return [retArray copy];
 }
 
 - (BOOL)any:(BOOL(^)(id obj))check {
-    for (int i = 0; i < [self count]; i++) {
-        if (check([self objectAtIndex:i]))
-            return YES;
-    }
-    
-    return NO;
+    return [SOCQCore any:check onCollection:self];
 }
 
 - (BOOL)all:(BOOL(^)(id obj))check {
-    for (int i = 0; i < [self count]; i++) {
-        if (!check([self objectAtIndex:i]))
-            return NO;
-    }
-    
-    return YES;
+    return [SOCQCore all:check onCollection:self];
 }
 
 - (NSDictionary*)groupBy:(id(^)(id obj))groupBlock {
     NSMutableDictionary* groupDictionary = [NSMutableDictionary new];
     
-    for (id element in self) {
-        id groupKey = groupBlock(element);
-        
-        if ([[groupDictionary allKeys] containsObject:groupKey]) {
-            id matchingKey = nil;
-            
-            for (id searchKey in [groupDictionary allKeys]) {
-                if ([searchKey isEqual:groupKey]) {
-                    matchingKey = searchKey;
-                    break;
-                }
-            }
-            
-            [[groupDictionary objectForKey:matchingKey] addObject:element];
-        }
-        else {
-            [groupDictionary setObject:[NSMutableArray arrayWithObject:element] forKey:groupKey];
-        }
-    }
+    [SOCQCore groupBy:groupBlock onCollection:self withReturnDictionary:groupDictionary];
     
     return [groupDictionary copy];
 }
@@ -129,9 +99,7 @@
 - (NSArray*)select:(id(^)(id originalObject))transform {
     NSMutableArray* newObjectArray = [NSMutableArray new];
     
-    for (id object in self) {
-        [newObjectArray addObject:transform(object)];
-    }
+    [SOCQCore select:transform onCollection:self withReturnCollection:newObjectArray];
     
     return [newObjectArray copy];
 }
@@ -147,29 +115,7 @@
         
     va_end(args);
     
-    for (id object in self) {
-        NSMutableDictionary* keyvalues = [NSMutableDictionary new];
-        
-        for (NSString* key in keypathsToGet){
-            id value = nil;
-            
-//TODO: REMOVE TRY/CATCH BUT STILL KEEP FAULT TOLERANCE FOR UNDEFINED KEYS
-            @try {
-                value = [object valueForKeyPath:key];
-            }
-            @catch (NSException *exception) {
-                if([[exception name] isEqualToString:NSUndefinedKeyException])
-                    NSLog(@"Undefined Key:%@",key);
-                else 
-                    @throw exception;
-            }
-
-            value = value ? value : [NSNull null];
-            [keyvalues setObject:value forKey:key];
-        }
-        
-        [entries addObject:keyvalues];
-    }
+    [SOCQCore selectFromCollection:self withReturnCollection:entries keypaths:keypathsToGet];
     
     return [entries copy];
 }
