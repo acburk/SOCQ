@@ -2,6 +2,8 @@
 
 Bringin' some query love to Objective-C
 
+Feel free to fork and open pull requests!
+
 __NSArray__
 
 - skip:
