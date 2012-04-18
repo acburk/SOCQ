@@ -119,4 +119,18 @@
     
     return [entries copy];
 }
+
+- (id)firstObject {
+    if ([self count] < 1)
+        return nil;
+
+    return [self objectAtIndex:0];
+}
+
+- (id)secondObject {
+    if ([self count] < 2)
+        return nil;
+    
+    return [self objectAtIndex:1];
+}
 @end

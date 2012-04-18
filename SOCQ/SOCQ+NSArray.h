@@ -21,4 +21,6 @@
 - (NSArray*)distinct;
 - (NSArray*)select:(id(^)(id originalObject))transform;
 - (NSArray*)selectKeypaths:(NSString*)keypath, ... NS_REQUIRES_NIL_TERMINATION;
+- (id)firstObject;
+- (id)secondObject;
 @end

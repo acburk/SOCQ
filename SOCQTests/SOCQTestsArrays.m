@@ -514,4 +514,25 @@
     }
 }
 
+#pragma mark - first and second tests
+- (void)testFirstNotNil {
+    STAssertNotNil([testArray firstObject], @"Object should not be nil.");
+}
+- (void)testFirstNil {
+    STAssertNil([[NSArray array] firstObject], @"Object should be nil.");
+}
+- (void)testFirstCorrectness {
+    STAssertTrue([[testArray firstObject] isEqualToString:@"Red"], @"First object should be Red");
+}
+
+- (void)testSecondNotNil {
+    STAssertNotNil([testArray secondObject], @"Object should not be nil.");
+}
+- (void)testSecondNil {
+    STAssertNil([[NSArray array] secondObject], @"Object should be nil.");
+}
+- (void)testSecondCorrectness {
+    STAssertTrue([[testArray secondObject] isEqualToString:@"Green"], @"First object should be Green");
+}
+
 @end
