@@ -2,7 +2,7 @@
 
 Bringin' some query love to Objective-C
 
-Feel free to fork and open pull requests!
+Feel free to open issues(feature requests), fork, and/or open pull requests!
 
 __NSArray__
 
