@@ -17,6 +17,8 @@ __NSArray__
 - distinct
 - select:
 - selectKeypaths:
+- firstObject
+- secondObject
 
 __NSDictionary__
 
@@ -136,6 +138,24 @@ _Selects properties from the elements in the array using the keypath mechanism. 
 
 	NSArray* americans = [people selectKeypaths:@"firstName",@"lastName",@"parent.firstName",@"age",nil];
 
+####firstObject
+    - (id)firstObject;
+    
+_Returns the first object in the array. If the array is empty, returns nil._
+
+    // Example - Get the first person
+    
+    id person = [people firstObject];
+
+####firstObject
+    - (id)secondObject;
+    
+_Returns the second object in the array. If the array doesn't contain two objects, returns nil._
+
+    // Example - Get the second person
+    
+    id person = [people secondObject];
+    
 ##NSDictionary
 ####where:
 	- (NSDictionary*)where:(BOOL(^)(id key, id value))check;
