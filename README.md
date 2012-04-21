@@ -20,6 +20,12 @@ __NSArray__
 - firstObject
 - secondObject
 
+__NSMutableArray__
+
+- (id)popObjectAtIndex:
+- (id)popFirstObject
+- (id)popLastObject
+
 __NSDictionary__
 
 - where:
@@ -147,7 +153,7 @@ _Returns the first object in the array. If the array is empty, returns nil._
     
     id person = [people firstObject];
 
-####firstObject
+####secondObject
     - (id)secondObject;
     
 _Returns the second object in the array. If the array doesn't contain two objects, returns nil._
@@ -155,6 +161,25 @@ _Returns the second object in the array. If the array doesn't contain two object
     // Example - Get the second person
     
     id person = [people secondObject];
+
+##NSMutableArray
+####popObjectAtIndex:
+    - (id)popObjectAtIndex:(NSUInteger)inIndex;
+####popFirstObject
+    - (id)popFirstObject;
+####popLastObject
+    - (id)popLastObject;
+
+_Removes and returns the object from the array. If index is outside out the range of the array, `NSRangeException` is raised._
+
+	// Example - remove the first person from the array
+	Person* firstPerson = [people popFirstObject];
+
+	// Example - remove the second person from the array
+	Person* secondPerson = [people popObjectAtIndex:1];
+
+	// Example - remove the last person from the array
+	Person* lastPerson = [people popLastObject];
     
 ##NSDictionary
 ####where:

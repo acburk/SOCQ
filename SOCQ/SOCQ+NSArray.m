@@ -134,3 +134,21 @@
     return [self objectAtIndex:1];
 }
 @end
+
+
+@implementation NSMutableArray (SOCQ)
+- (id)popObjectAtIndex:(NSUInteger)inIndex {
+    id obj = [self objectAtIndex:inIndex];
+    [self removeObjectAtIndex:inIndex];
+    
+    return obj;
+}
+
+- (id)popFirstObject {
+    return [self popObjectAtIndex:0];
+}
+
+- (id)popLastObject {
+    return [self popObjectAtIndex:[self count]-1];
+}
+@end

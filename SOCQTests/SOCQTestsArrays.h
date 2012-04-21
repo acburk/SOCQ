@@ -11,6 +11,7 @@
 @interface SOCQTestsArrays : SenTestCase {
     NSArray* testArray;
     NSArray* testPersonArray;
+    NSMutableArray* mutableTestArray;
 }
 
 @end

@@ -59,7 +59,8 @@
                  @"Black", 
                  @"White", 
                  @"Brown",nil];
-    
+    mutableTestArray = [testArray mutableCopy];
+
     
     ArrayPerson* rick = [[ArrayPerson alloc] initWithFirstName:@"rick" lastName:@"rick" andParent:nil];
     ArrayPerson* adam = [[ArrayPerson alloc] initWithFirstName:@"adam" lastName:@"adam" andParent:nil];
@@ -535,4 +536,29 @@
     STAssertTrue([[testArray secondObject] isEqualToString:@"Green"], @"First object should be Green");
 }
 
+#pragma mark - popobjectatindex
+- (void)testPopSecondElement {
+    id secondElement = [mutableTestArray popObjectAtIndex:1];
+    
+    STAssertEquals([mutableTestArray count], [testArray count] - 1, @"Array should be 1 smaller.");
+    STAssertEqualObjects(secondElement, @"Green",@"Should of popped Green string");
+}
+- (void)testPopFirstElement {
+    id secondElement = [mutableTestArray popFirstObject];
+    
+    STAssertEquals([mutableTestArray count], [testArray count] - 1, @"Array should be 1 smaller.");
+    STAssertEqualObjects(secondElement, @"Red",@"Should of popped Red string");
+}
+- (void)testPopLastElement {
+    id secondElement = [mutableTestArray popLastObject];
+    
+    STAssertEquals([mutableTestArray count], [testArray count] - 1, @"Array should be 1 smaller.");
+    STAssertEqualObjects(secondElement, @"Brown",@"Should of popped Brown string");
+}
+- (void)testPopOutOfRange {
+    STAssertThrowsSpecificNamed([mutableTestArray popObjectAtIndex:[mutableTestArray count]],NSException,NSRangeException,@"Should throw exception for out of range value");
+}
+- (void)testPopUnderRange {
+    STAssertThrowsSpecificNamed([mutableTestArray popObjectAtIndex:-1],NSException,NSRangeException,@"Should throw exception for out of range value");
+}
 @end

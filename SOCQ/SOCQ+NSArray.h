@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface NSArray (SOCQ)
-
 - (NSArray*)take:(NSUInteger)inCount;
 - (NSArray*)skip:(NSUInteger)inCount;
 - (NSArray*)skip:(NSUInteger)inSkip take:(NSUInteger)inTake;
@@ -23,4 +22,10 @@
 - (NSArray*)selectKeypaths:(NSString*)keypath, ... NS_REQUIRES_NIL_TERMINATION;
 - (id)firstObject;
 - (id)secondObject;
+@end
+
+@interface NSMutableArray (SOCQ)
+- (id)popObjectAtIndex:(NSUInteger)inIndex;
+- (id)popFirstObject;
+- (id)popLastObject;
 @end
