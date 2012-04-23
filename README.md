@@ -22,9 +22,9 @@ __NSArray__
 
 __NSMutableArray__
 
-- (id)popObjectAtIndex:
-- (id)popFirstObject
-- (id)popLastObject
+- popObjectAtIndex:
+- popFirstObject
+- popLastObject
 
 __NSDictionary__
 
