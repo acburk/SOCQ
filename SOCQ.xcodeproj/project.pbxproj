@@ -8,15 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		4B0E591314DD4849006D7FBD /* SOCQ+NSArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC1450B14DD36AF001F8AB3 /* SOCQ+NSArray.m */; };
-		4B558E9A150B3CED00D948A5 /* SOCQ+NSSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B558E98150B3CED00D948A5 /* SOCQ+NSSet.h */; };
+		4B558E9A150B3CED00D948A5 /* SOCQ+NSSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B558E98150B3CED00D948A5 /* SOCQ+NSSet.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4B558E9B150B3CED00D948A5 /* SOCQ+NSSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B558E99150B3CED00D948A5 /* SOCQ+NSSet.m */; };
 		4B558E9C150B3CED00D948A5 /* SOCQ+NSSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B558E99150B3CED00D948A5 /* SOCQ+NSSet.m */; };
-		4B558E9E150B3EDF00D948A5 /* SOCQ+NSArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BC1450A14DD36AF001F8AB3 /* SOCQ+NSArray.h */; };
-		4B7EE32214E3AD80001264BC /* SOCQ+NSDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B7EE32014E3AD80001264BC /* SOCQ+NSDictionary.h */; };
+		4B558E9E150B3EDF00D948A5 /* SOCQ+NSArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BC1450A14DD36AF001F8AB3 /* SOCQ+NSArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4B7EE32214E3AD80001264BC /* SOCQ+NSDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B7EE32014E3AD80001264BC /* SOCQ+NSDictionary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4B7EE32314E3AD80001264BC /* SOCQ+NSDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B7EE32114E3AD80001264BC /* SOCQ+NSDictionary.m */; };
 		4B7EE32414E3AD80001264BC /* SOCQ+NSDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B7EE32114E3AD80001264BC /* SOCQ+NSDictionary.m */; };
 		4B7EE32B14E3AEB6001264BC /* SOCQTestDictionaries.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B7EE32A14E3AEB6001264BC /* SOCQTestDictionaries.m */; };
-		4BBE3966152C06B700EAB7CC /* SOCQCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BBE3964152C06B700EAB7CC /* SOCQCore.h */; };
+		4BBE3966152C06B700EAB7CC /* SOCQCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BBE3964152C06B700EAB7CC /* SOCQCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4BBE3967152C06B700EAB7CC /* SOCQCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BBE3965152C06B700EAB7CC /* SOCQCore.m */; };
 		4BC1450614DD36AF001F8AB3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BC1450514DD36AF001F8AB3 /* Foundation.framework */; };
 		4BC1450C14DD36AF001F8AB3 /* SOCQ+NSArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC1450B14DD36AF001F8AB3 /* SOCQ+NSArray.m */; };
@@ -25,6 +25,7 @@
 		4BC1451A14DD36AF001F8AB3 /* libSOCQ.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BC1450214DD36AF001F8AB3 /* libSOCQ.a */; };
 		4BC1452014DD36AF001F8AB3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4BC1451E14DD36AF001F8AB3 /* InfoPlist.strings */; };
 		4BC1452314DD36AF001F8AB3 /* SOCQTestsArrays.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC1452214DD36AF001F8AB3 /* SOCQTestsArrays.m */; };
+		4BC93090155E390F00FAF818 /* SOCQ.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BC9308F155E390F00FAF818 /* SOCQ.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4BF45413150DB1E300E01D20 /* SOCQTestsSets.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF45412150DB1E300E01D20 /* SOCQTestsSets.m */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		4BC1451F14DD36AF001F8AB3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4BC1452114DD36AF001F8AB3 /* SOCQTestsArrays.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SOCQTestsArrays.h; sourceTree = "<group>"; };
 		4BC1452214DD36AF001F8AB3 /* SOCQTestsArrays.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SOCQTestsArrays.m; sourceTree = "<group>"; };
+		4BC9308F155E390F00FAF818 /* SOCQ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOCQ.h; sourceTree = "<group>"; };
 		4BF45411150DB1E300E01D20 /* SOCQTestsSets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOCQTestsSets.h; sourceTree = "<group>"; };
 		4BF45412150DB1E300E01D20 /* SOCQTestsSets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SOCQTestsSets.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,6 +121,7 @@
 		4BC1450714DD36AF001F8AB3 /* SOCQ */ = {
 			isa = PBXGroup;
 			children = (
+				4BC9308F155E390F00FAF818 /* SOCQ.h */,
 				4BBE3964152C06B700EAB7CC /* SOCQCore.h */,
 				4BBE3965152C06B700EAB7CC /* SOCQCore.m */,
 				4BC1450A14DD36AF001F8AB3 /* SOCQ+NSArray.h */,
@@ -174,6 +177,7 @@
 				4B7EE32214E3AD80001264BC /* SOCQ+NSDictionary.h in Headers */,
 				4B558E9A150B3CED00D948A5 /* SOCQ+NSSet.h in Headers */,
 				4BBE3966152C06B700EAB7CC /* SOCQCore.h in Headers */,
+				4BC93090155E390F00FAF818 /* SOCQ.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +341,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -354,6 +359,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -367,6 +373,7 @@
 				GCC_PREFIX_HEADER = "SOCQ/SOCQ-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "include/$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -379,6 +386,7 @@
 				GCC_PREFIX_HEADER = "SOCQ/SOCQ-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "include/$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
