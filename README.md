@@ -45,8 +45,9 @@ __NSSet__
 
 ##NSArray
 ####take:
-	- (NSArray*)take:(NSUInteger)inCount;
-	
+```objc
+- (NSArray*)take:(NSUInteger)inCount;
+```	
 _Returns an array with the specified number of elements from the beginning of the target array._
 
 	// Example - Getting the first five elements
