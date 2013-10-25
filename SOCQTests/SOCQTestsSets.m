@@ -60,6 +60,14 @@
     return [[SetPerson alloc] initWithFirstName:[self firstName] lastName:[self lastName] andParent:[self parent]];
 }
 
+-(NSUInteger)hash{
+    NSString* str = [NSString stringWithFormat:@"%@|%@|%@|%@",self.firstName,self.lastName,self.parent.firstName,self.parent.lastName];
+    NSData* strData = [str dataUsingEncoding:NSUTF8StringEncoding];
+    
+    NSUInteger dataHash = [[NSData dataWithBytes:[strData bytes] length:[strData length]] hash];
+    return dataHash;
+}
+
 -(BOOL)isEqual:(id)object {
     return ([[self firstName] isEqualToString:[object firstName]] &&
             [[self lastName] isEqualToString:[object lastName]] &&
