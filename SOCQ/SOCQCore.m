@@ -73,7 +73,7 @@
             [[targetCollection objectForKey:matchingKey] addObject:element];
         }
         else {
-            id newObject = nil;
+            id newObject = [NSNull null];
             
             if ([sourceCollection isKindOfClass:[NSArray class]])
                 newObject = [NSMutableArray arrayWithObject:element];
