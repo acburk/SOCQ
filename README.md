@@ -1,4 +1,4 @@
-#SOCQ (Syntax for Objective-C Queries)
+# SOCQ (Syntax for Objective-C Queries)
 
 Bringin' some query love to Objective-C
 
@@ -43,8 +43,8 @@ __NSSet__
 - select:
 - selectKeypaths:
 
-##NSArray
-####take:
+## NSArray
+#### take:
 ```objc
 - (NSArray*)take:(NSUInteger)inCount;
 ```	
@@ -56,7 +56,7 @@ _Returns an array with the specified number of elements from the beginning of th
 NSArray* elements = [people take:5];
 ```
 
-####skip:
+#### skip:
 ```objc
 - (NSArray*)skip:(NSUInteger)inCount;
 ```
@@ -69,7 +69,7 @@ _Skips the indicated number of elements in the array and returns an array of the
 NSArray* remaining = [people skip:5];
 ```
 
-####skip:take:
+#### skip:take:
 ```objc
 - (NSArray*)skip:(NSUInteger)inSkip take:(NSUInteger)inTake;
 ```
@@ -82,7 +82,7 @@ _Simple convenience method that combines the skip and take methods. Ideal for pa
 NSArray* remaining = [people skip:5 take:5];
 ```	
 	
-####where:
+#### where:
 ```objc
 - (NSArray*)where:(BOOL(^)(id obj))check;
 ```
@@ -95,7 +95,7 @@ _Uses the `check` block on every element in the array to determine if they shoul
 NSArray* 25YearOlds = [people where:^(id obj){ return [obj age] == 25; }];
 ```
 
-####any:
+#### any:
 ```objc
 - (BOOL)any:(BOOL(^)(id obj))check;
 ```
@@ -108,7 +108,7 @@ _Checks every element in the array to see if any of the elements successfully pa
 BOOL containsMinors = [people any:^(id obj){ return [obj age] < 18; }];
 ```
 
-####all:
+#### all:
 ```objc
 - (BOOL)all:(BOOL(^)(id obj))check;
 ```
@@ -121,7 +121,7 @@ _Checks every element in the array to see if all of the elements successfully pa
 BOOL everyone25orOver = [people all:^(id obj){ return [obj age] >= 25; }];
 ```
 
-####groupby:
+#### groupby:
 ```objc
 - (NSDictionary*)groupBy:(id(^)(id obj))groupBlock;
 ```
@@ -132,7 +132,7 @@ _Uses the object returned from the `groupBlock` block as a key to group the obje
 
 NSDictionary* peopleByFamilyName = [people groupBy:^(id obj){ return [obj lastName]; }];
 ```
-####distinctObjectsByAddress
+#### distinctObjectsByAddress
 ```objc
 - (NSArray*)distinctObjectsByAddress;
 ```
@@ -143,7 +143,7 @@ _Does a simple pointer address compare to remove elements that refer to the same
 
 NSArray* uniquePeople = [people distinctObjectsByAddress];
 ```
-####distinct
+#### distinct
 ```objc
 - (NSArray*)distinct;
 ```
@@ -154,7 +154,7 @@ _Uses the class' compare and hash method to remove elements that contain the sam
 
 NSArray* uniquePeople = [people distinct];
 ```
-####select:
+#### select:
 ```objc
 - (NSArray*)select:(id(^)(id originalObject))transform;
 ```	
@@ -167,7 +167,7 @@ NSArray* americans = [people select:^(id obj){ return [[American alloc] initWith
 										 LastName:[obj lastName]
 										      age:[obj age]] }];
 ```
-####selectKeypaths:
+#### selectKeypaths:
 ```objc
 - (NSArray*)selectKeypaths:(NSString*)keypath, ... NS_REQUIRES_NIL_TERMINATION;
 ```
@@ -178,7 +178,7 @@ _Selects properties from the elements in the array using the keypath mechanism. 
 
 NSArray* americans = [people selectKeypaths:@"firstName",@"lastName",@"parent.firstName",@"age",nil];
 ```
-####firstObject
+#### firstObject
 ```objc
 - (id)firstObject;
 ```    
@@ -189,7 +189,7 @@ _Returns the first object in the array. If the array is empty, returns nil._
     
 id person = [people firstObject];
 ```
-####secondObject
+#### secondObject
 ```objc
 - (id)secondObject;
 ```    
@@ -201,16 +201,16 @@ _Returns the second object in the array. If the array doesn't contain two object
 id person = [people secondObject];
 ```
 
-##NSMutableArray
-####popObjectAtIndex:
+## NSMutableArray
+#### popObjectAtIndex:
 ```objc
 - (id)popObjectAtIndex:(NSUInteger)inIndex;
 ```
-####popFirstObject
+#### popFirstObject
 ```objc
 - (id)popFirstObject;
 ```
-####popLastObject
+#### popLastObject
 ```objc
 - (id)popLastObject;
 ```
@@ -228,8 +228,8 @@ Person* secondPerson = [people popObjectAtIndex:1];
 Person* lastPerson = [people popLastObject];
 ```
     
-##NSDictionary
-####where:
+## NSDictionary
+#### where:
 ```objc
 - (NSDictionary*)where:(BOOL(^)(id key, id value))check;
 ```	
@@ -240,7 +240,7 @@ _Uses the `check` block on every key-object in the dictionary to determine if th
 
 NSDictionary* entriesWithKeysOf3OrLess = [peopleGroup where:^(id key, id value){ return [key length] <= 3; }];
 ```
-####any:
+#### any:
 ```objc
 - (BOOL)any:(BOOL(^)(id key, id value))check;
 ```	
@@ -251,7 +251,7 @@ _Checks every key-object in the dictionary to see if any of the elements success
 
 BOOL areAnyKeysLongerThan10 = [peopleGroups any:^(id key, id value){ return [key length] > 10 }];
 ```
-####all:
+#### all:
 ```objc
 - (BOOL)all:(BOOL(^)(id key, id value))check;
 ```
@@ -262,8 +262,8 @@ _Checks every key-object in the dictionary to see if all of the elements success
 
 BOOL areKeysStrings = [peopleGroups all:^(id key, id value){ return [key class] == [NSString class] }];
 ```
-##NSSet
-####where:
+## NSSet
+#### where:
 ```objc
 - (NSSet*)where:(BOOL(^)(id obj))check;
 ```	
@@ -274,7 +274,7 @@ _Uses the `check` block on every element in the set to determine if they should 
 
 NSSet* 25YearOlds = [people where:^(id obj){ return [obj age] == 25; }];
 ```
-####any:
+#### any:
 ```objc
 - (BOOL)any:(BOOL(^)(id obj))check;
 ```
@@ -285,7 +285,7 @@ _Checks every element in the set to see if any of the elements successfully pass
 
 BOOL containsMinors = [people any:^(id obj){ return [obj age] < 18; }];
 ```
-####all:
+#### all:
 ```objc
 - (BOOL)all:(BOOL(^)(id obj))check;
 ```
@@ -297,7 +297,7 @@ _Checks every element in the set to see if all of the elements successfully pass
 BOOL everyone25orOver = [people all:^(id obj){ return [obj age] >= 25; }];
 ```
 
-####groupby:
+#### groupby:
 ```objc
 - (NSDictionary*)groupBy:(id(^)(id obj))groupBlock;
 ```
@@ -308,7 +308,7 @@ _Uses the object returned from the `groupBlock` block as a key to group the obje
 
 NSDictionary* peopleByFamilyName = [people groupBy:^(id obj){ return [obj lastName]; }];
 ```    
-####select:
+#### select:
 ```objc
 - (NSSet*)select:(id(^)(id originalObject))transform;
 ```	
@@ -321,7 +321,7 @@ NSSet* americans = [people select:^(id obj){ return [[American alloc] initWithFi
 									       LastName:[obj lastName]
 										    age:[obj age]] }];
 ```                                                    
-####selectKeypaths:
+#### selectKeypaths:
 ```objc
 - (NSSet*)selectKeypaths:(NSString*)keypath, ... NS_REQUIRES_NIL_TERMINATION;
 ```
